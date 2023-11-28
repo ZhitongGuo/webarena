@@ -1,0 +1,1139 @@
+query,obs,action,prev_action,windowed_obs,contained,modified_obs,predict_actionsuccess
+"Check for pickup restaurant available in Boston, NY on March 18, 5pm with just one guest","[1] RootWebArea '' focused: True
+	[98] StaticText 'Skip to main content'
+		[110] StaticText 'Use Tock at your business'
+	[128] button 'Book a reservation'
+	[129] button 'Reservations'
+	[130] button 'Search'
+	[132] button 'Profile image'
+		[373] img 'Profile image'
+		[148] StaticText 'DELICIOUS'
+		[150] StaticText 'STARTS'
+		[152] StaticText 'HERE.'
+		[374] StaticText 'Reservation type'
+		[168] combobox '' hasPopup: menu expanded: False
+			[376] menuitem 'Dine in' selected: True
+			[377] menuitem 'Pickup' selected: False
+			[378] menuitem 'Delivery' selected: False
+			[379] menuitem 'Events' selected: False
+			[380] menuitem 'Wineries' selected: False
+			[381] menuitem 'Everything' selected: False
+		[382] StaticText 'Location'
+		[172] textbox '' required: False
+			[383] StaticText 'Columbus, OH'
+		[384] StaticText 'Date'
+		[180] textbox '' required: False
+			[385] StaticText 'Thu, Mar 16'
+		[386] StaticText 'Time'
+		[187] combobox '' hasPopup: menu expanded: False
+			[388] menuitem 'Now' selected: True
+			[389] menuitem '8:30 PM' selected: False
+			[390] menuitem '9:00 PM' selected: False
+			[391] menuitem '9:30 PM' selected: False
+			[392] menuitem '10:00 PM' selected: False
+			[393] menuitem '10:30 PM' selected: False
+			[394] menuitem '11:00 PM' selected: False
+			[395] menuitem '11:30 PM' selected: False
+		[396] StaticText 'Party size'
+		[191] combobox '' hasPopup: menu expanded: False
+			[398] menuitem '1 guest' selected: True
+			[399] menuitem '2 guests' selected: False
+			[400] menuitem '3 guests' selected: False
+			[401] menuitem '4 guests' selected: False
+			[402] menuitem '5 guests' selected: False
+			[403] menuitem '6 guests' selected: False
+			[404] menuitem '7 guests' selected: False
+			[405] menuitem '8 guests' selected: False
+			[406] menuitem '9 guests' selected: False
+			[407] menuitem '10 guests' selected: False
+		[200] StaticText 'Search'
+		[202] heading 'Explore all that Tock has to offer'
+		[513] img 'Multiple dishes served with wine'
+		[518] StaticText 'Dine in'
+		[522] img 'Several bagged orders of food to-go'
+		[527] StaticText 'Pickup'
+		[531] img 'Opened container revealing a hamburger'
+		[536] StaticText 'Delivery'
+		[540] img 'Chef in a kitchen'
+		[545] StaticText 'Events'
+		[549] img 'People strolling a vineyard sipping wine'
+		[554] StaticText 'Wineries'
+		[211] heading 'New & Notable'
+		[421] StaticText 'The latest & greatest on Tock'
+		[419] StaticText 'Explore all'
+		[556] link 'Agni Columbus, OH - Brewery District Grill'
+			[595] heading 'Agni'
+		[558] link 'Streetside 62 Bistro Washington Court House, OH Restaurant'
+			[606] heading 'Streetside 62 Bistro'
+		[560] link ""Hell's Backbone Grill & Farm Boulder, UT Four Corners Farm To Table""
+			[617] heading ""Hell's Backbone Grill & Farm""
+		[562] link 'Symposium Cincinnati, OH - East Walnut HIlls Wine Shop'
+			[628] heading 'Symposium'
+		[564] link 'The Merchant Tavern Akron, OH - Merriman Valley American'",click [168],nan,1,"[""\t[129] button 'Reservations'"", ""\t[130] button 'Search'"", ""\t[132] button 'Profile image'"", ""\t\t[373] img 'Profile image'"", ""\t\t[148] StaticText 'DELICIOUS'"", ""\t\t[150] StaticText 'STARTS'"", ""\t\t[152] StaticText 'HERE.'"", ""\t\t[374] StaticText 'Reservation type'"", ""\t\t[168] combobox '' hasPopup: menu expanded: False"", ""\t\t\t[376] menuitem 'Dine in' selected: True"", ""\t\t\t[377] menuitem 'Pickup' selected: False"", ""\t\t\t[378] menuitem 'Delivery' selected: False"", ""\t\t\t[379] menuitem 'Events' selected: False"", ""\t\t\t[380] menuitem 'Wineries' selected: False"", ""\t\t\t[381] menuitem 'Everything' selected: False"", ""\t\t[382] StaticText 'Location'"", ""\t\t[172] textbox '' required: False"", ""\t\t\t[383] StaticText 'Columbus, OH'"", ""\t\t[384] StaticText 'Date'"", ""\t\t[180] textbox '' required: False"", ""\t\t\t[385] StaticText 'Thu, Mar 16'"", ""\t\t[386] StaticText 'Time'"", ""\t\t[187] combobox '' hasPopup: menu expanded: False"", ""\t\t\t[388] menuitem 'Now' selected: True"", ""\t\t\t[389] menuitem '8:30 PM' selected: False"", ""\t\t\t[390] menuitem '9:00 PM' selected: False"", ""\t\t\t[391] menuitem '9:30 PM' selected: False"", ""\t\t\t[392] menuitem '10:00 PM' selected: False"", ""\t\t\t[393] menuitem '10:30 PM' selected: False"", ""\t\t\t[394] menuitem '11:00 PM' selected: False"", ""\t\t\t[395] menuitem '11:30 PM' selected: False"", ""\t\t[396] StaticText 'Party size'"", ""\t\t[191] combobox '' hasPopup: menu expanded: False"", ""\t\t\t[398] menuitem '1 guest' selected: True"", ""\t\t\t[399] menuitem '2 guests' selected: False"", ""\t\t\t[400] menuitem '3 guests' selected: False"", ""\t\t\t[401] menuitem '4 guests' selected: False"", ""\t\t\t[402] menuitem '5 guests' selected: False"", ""\t\t\t[403] menuitem '6 guests' selected: False""]","Let's think step-by-step. On this page, we have a reservation form to search for restaurants. To check for pickup restaurants available in Boston, NY on March 18 at 5pm with just one guest, we need to select the following options:
+- Reservation type: Pickup
+- Location: Boston, NY
+- Date: Thu, Mar 18
+- Time: 5:00 PM
+- Party size: 1 guest
+
+In summary, the next actions I will perform are:
+1. ```click [168]``` to expand the reservation type menu.
+2. ```click [376]``` to select the ""Pickup"" option.
+3. ```type [172] [Boston, NY] [1]``` to enter the location.
+4. ```type [180] [Thu, Mar 18] [1]``` to enter the date.
+5. ```click [187]``` to expand the time menu.
+6. ```click [389]``` to select the ""5:00 PM"" option.
+7. ```click [191]``` to expand the party size menu.
+8. ```click [398]``` to select the ""1 guest"" option.
+
+Please note that we may need to scroll or interact with other elements on the page depending on its layout.",1
+"Check for pickup restaurant available in Boston, NY on March 18, 5pm with just one guest","[371] menuitem 'Pickup' selected: False
+			[372] menuitem 'Delivery' selected: False
+			[373] menuitem 'Events' selected: False
+			[374] menuitem 'Wineries' selected: False
+			[375] menuitem 'Everything' selected: False
+		[376] StaticText 'Location'
+		[170] textbox '' required: False
+			[377] StaticText 'Columbus, OH'
+		[381] StaticText 'Date'
+		[178] textbox '' required: False
+			[382] StaticText 'Thu, Mar 16'
+		[383] StaticText 'Time'
+		[185] combobox '' hasPopup: menu expanded: False
+			[385] menuitem 'Now' selected: True
+			[386] menuitem '9:00 PM' selected: False
+			[387] menuitem '9:30 PM' selected: False
+			[388] menuitem '10:00 PM' selected: False
+			[389] menuitem '10:30 PM' selected: False
+			[390] menuitem '11:00 PM' selected: False
+			[391] menuitem '11:30 PM' selected: False
+		[194] StaticText 'Search'
+		[196] heading 'Explore all that Tock has to offer'
+		[497] img 'Multiple dishes served with wine'
+		[502] StaticText 'Dine in'
+		[506] img 'Several bagged orders of food to-go'
+		[511] StaticText 'Pickup'
+		[515] img 'Opened container revealing a hamburger'
+		[520] StaticText 'Delivery'
+		[524] img 'Chef in a kitchen'
+		[529] StaticText 'Events'
+		[533] img 'People strolling a vineyard sipping wine'
+		[538] StaticText 'Wineries'
+		[205] heading 'New & Notable'
+		[405] StaticText 'The latest & greatest on Tock'
+		[403] StaticText 'Explore all'
+		[540] link 'Agni Columbus, OH - Brewery District Grill'
+			[579] heading 'Agni'
+		[542] link 'Streetside 62 Bistro Washington Court House, OH Restaurant'
+			[590] heading 'Streetside 62 Bistro'
+		[544] link ""Hell's Backbone Grill & Farm Boulder, UT Four Corners Farm To Table""
+			[601] heading ""Hell's Backbone Grill & Farm""
+		[546] link 'Symposium Cincinnati, OH - East Walnut HIlls Wine Shop'
+			[612] heading 'Symposium'
+		[548] link 'The Merchant Tavern Akron, OH - Merriman Valley American'
+			[623] heading 'The Merchant Tavern'
+		[550] link ""Luigi's Ristorante Italiano Mason, OH Italian""
+			[634] heading ""Luigi's Ristorante Italiano""
+		[552] link 'Urban Grill on Main Cincinnati, OH - Village of Newtown American'
+			[645] heading 'Urban Grill on Main'
+		[554] link 'The Pickle and Pig Oxford, OH - Mile Square American'
+			[656] heading 'The Pickle and Pig'
+		[423] heading 'View All'
+		[215] heading ""Women's""
+		[216] heading 'History Month'
+		[227] StaticText 'Celebrating and supporting leading women '
+		[229] StaticText 'shaking up the industry.'
+		[225] StaticText 'Explore now'
+		[236] heading 'Tock To Go'
+		[432] StaticText 'Pickup and delivery meals'
+		[430] StaticText 'Explore all'
+		[434] heading 'View All'
+		[244] heading 'Tock Gift Cards'
+		[245] heading 'Give the delicious gift of Tock.'
+		[259] StaticText 'Share your love of great food and wine. For every occasion. Any amount. Never expires. Sure to delight.'
+		[250] StaticText 'Send a gift card'
+		[262] heading 'The Tock Blog'
+		[263] heading 'Chef Interviews, Stories, & Curated City Guides.'
+		[267] StaticText 'Read the latest'
+		[278] heading 'Wineries & Tasting Rooms'
+		[443] StaticText 'Taste your way through varietals & vintages'
+		[441] StaticText 'Explore all'
+		[445] heading 'View All'
+		[286] heading 'Reservations. Events. To-Go. The OnlyAll In One Solution.'
+		[303] StaticText 'Tock is here to meet the ever-changing needs of hospitality.'
+		[301] StaticText 'Learn more'
+		[310] heading 'Chase Cardmember Tables'
+		[454] StaticText 'Primetime reservations at restaurants across the country'
+		[452] StaticText 'Explore all'
+		[456] heading 'View All'
+		[316] heading 'Browse all of Tock'
+		[318] button 'Load more'
+		[324] heading 'Buy a Tock gift card'
+		[329] StaticText 'Give a whole world of experiences, events, and wineries.'
+		[332] StaticText 'Learn more'
+		[333] heading 'Download the Tock app'
+		[338] StaticText 'Everything you love about Tock is now just a tap away. '
+		[341] StaticText 'Download it now'
+		[342] heading 'Use Tock at your business'
+		[347] StaticText 'Curious about our reservation and table management system? '
+		[350] StaticText 'Learn more'
+		[354] StaticText 'Tock home page'
+		[465] StaticText 'Support'
+		[469] StaticText 'Careers'
+		[473] StaticText 'Terms'
+		[477] StaticText 'Privacy'
+		[481] StaticText 'Instagram'
+		[485] StaticText 'Twitter'
+		[489] StaticText 'LinkedIn'
+		[493] StaticText 'Facebook'
+		[357] StaticText 'Explore Tock 2023'",click [381],[combobox]  Reservation type -> SELECT: Pickup,1,"[""[371] menuitem 'Pickup' selected: False"", ""\t\t\t[372] menuitem 'Delivery' selected: False"", ""\t\t\t[373] menuitem 'Events' selected: False"", ""\t\t\t[374] menuitem 'Wineries' selected: False"", ""\t\t\t[375] menuitem 'Everything' selected: False"", ""\t\t[376] StaticText 'Location'"", ""\t\t[170] textbox '' required: False"", ""\t\t\t[377] StaticText 'Columbus, OH'"", ""\t\t[381] StaticText 'Date'"", ""\t\t[178] textbox '' required: False"", ""\t\t\t[382] StaticText 'Thu, Mar 16'"", ""\t\t[383] StaticText 'Time'"", ""\t\t[185] combobox '' hasPopup: menu expanded: False"", ""\t\t\t[385] menuitem 'Now' selected: True"", ""\t\t\t[386] menuitem '9:00 PM' selected: False"", ""\t\t\t[387] menuitem '9:30 PM' selected: False"", ""\t\t\t[388] menuitem '10:00 PM' selected: False"", ""\t\t\t[389] menuitem '10:30 PM' selected: False"", ""\t\t\t[390] menuitem '11:00 PM' selected: False"", ""\t\t\t[391] menuitem '11:30 PM' selected: False"", ""\t\t[194] StaticText 'Search'"", ""\t\t[196] heading 'Explore all that Tock has to offer'"", ""\t\t[497] img 'Multiple dishes served with wine'"", ""\t\t[502] StaticText 'Dine in'"", ""\t\t[506] img 'Several bagged orders of food to-go'"", ""\t\t[511] StaticText 'Pickup'"", ""\t\t[515] img 'Opened container revealing a hamburger'"", ""\t\t[520] StaticText 'Delivery'"", ""\t\t[524] img 'Chef in a kitchen'"", ""\t\t[263] heading 'Chef Interviews, Stories, & Curated City Guides.'"", ""\t\t[267] StaticText 'Read the latest'"", ""\t\t[278] heading 'Wineries & Tasting Rooms'"", ""\t\t[443] StaticText 'Taste your way through varietals & vintages'"", ""\t\t[441] StaticText 'Explore all'"", ""\t\t[445] heading 'View All'"", ""\t\t[286] heading 'Reservations. Events. To-Go. The OnlyAll In One Solution.'"", ""\t\t[303] StaticText 'Tock is here to meet the ever-changing needs of hospitality.'"", ""\t\t[301] StaticText 'Learn more'"", ""\t\t[310] heading 'Chase Cardmember Tables'"", ""\t\t[454] StaticText 'Primetime reservations at restaurants across the country'""]","Let's think step-by-step. This page has a reservation form with several fields. I've already selected the reservation type as pickup. Now, I need to fill in the location, date, time, and number of guests. I'll start by filling in the location field. The ID of the location field is [377]. In summary, the next action I will perform is ```type [377] [Boston, NY]```",0
+"Check for pickup restaurant available in Boston, NY on March 18, 5pm with just one guest","[371] menuitem 'Pickup' selected: False
+			[372] menuitem 'Delivery' selected: False
+			[373] menuitem 'Events' selected: False
+			[374] menuitem 'Wineries' selected: False
+			[375] menuitem 'Everything' selected: False
+		[376] StaticText 'Location'
+		[170] textbox '' required: False
+			[377] StaticText 'Columbus, OH'
+		[381] StaticText 'Date'
+		[178] textbox '' required: False
+			[382] StaticText 'Thu, Mar 16'
+		[383] StaticText 'Time'
+		[185] combobox '' hasPopup: menu expanded: False
+			[385] menuitem 'Now' selected: True
+			[386] menuitem '9:00 PM' selected: False
+			[387] menuitem '9:30 PM' selected: False
+			[388] menuitem '10:00 PM' selected: False
+			[389] menuitem '10:30 PM' selected: False
+			[390] menuitem '11:00 PM' selected: False
+			[391] menuitem '11:30 PM' selected: False
+		[194] StaticText 'Search'
+		[196] heading 'Explore all that Tock has to offer'
+		[497] img 'Multiple dishes served with wine'
+		[502] StaticText 'Dine in'
+		[506] img 'Several bagged orders of food to-go'
+		[511] StaticText 'Pickup'
+		[515] img 'Opened container revealing a hamburger'
+		[520] StaticText 'Delivery'
+		[524] img 'Chef in a kitchen'
+		[529] StaticText 'Events'
+		[533] img 'People strolling a vineyard sipping wine'
+		[538] StaticText 'Wineries'
+		[205] heading 'New & Notable'
+		[405] StaticText 'The latest & greatest on Tock'
+		[403] StaticText 'Explore all'
+		[540] link 'Agni Columbus, OH - Brewery District Grill'
+			[579] heading 'Agni'
+		[542] link 'Streetside 62 Bistro Washington Court House, OH Restaurant'
+			[590] heading 'Streetside 62 Bistro'
+		[544] link ""Hell's Backbone Grill & Farm Boulder, UT Four Corners Farm To Table""
+			[601] heading ""Hell's Backbone Grill & Farm""
+		[546] link 'Symposium Cincinnati, OH - East Walnut HIlls Wine Shop'
+			[612] heading 'Symposium'
+		[548] link 'The Merchant Tavern Akron, OH - Merriman Valley American'
+			[623] heading 'The Merchant Tavern'
+		[550] link ""Luigi's Ristorante Italiano Mason, OH Italian""
+			[634] heading ""Luigi's Ristorante Italiano""
+		[552] link 'Urban Grill on Main Cincinnati, OH - Village of Newtown American'
+			[645] heading 'Urban Grill on Main'
+		[554] link 'The Pickle and Pig Oxford, OH - Mile Square American'
+			[656] heading 'The Pickle and Pig'
+		[423] heading 'View All'
+		[215] heading ""Women's""
+		[216] heading 'History Month'
+		[227] StaticText 'Celebrating and supporting leading women '
+		[229] StaticText 'shaking up the industry.'
+		[225] StaticText 'Explore now'
+		[236] heading 'Tock To Go'
+		[432] StaticText 'Pickup and delivery meals'
+		[430] StaticText 'Explore all'
+		[434] heading 'View All'
+		[244] heading 'Tock Gift Cards'
+		[245] heading 'Give the delicious gift of Tock.'
+		[259] StaticText 'Share your love of great food and wine. For every occasion. Any amount. Never expires. Sure to delight.'
+		[250] StaticText 'Send a gift card'
+		[262] heading 'The Tock Blog'
+		[263] heading 'Chef Interviews, Stories, & Curated City Guides.'
+		[267] StaticText 'Read the latest'
+		[278] heading 'Wineries & Tasting Rooms'
+		[443] StaticText 'Taste your way through varietals & vintages'
+		[441] StaticText 'Explore all'
+		[445] heading 'View All'
+		[286] heading 'Reservations. Events. To-Go. The OnlyAll In One Solution.'
+		[303] StaticText 'Tock is here to meet the ever-changing needs of hospitality.'
+		[301] StaticText 'Learn more'
+		[310] heading 'Chase Cardmember Tables'
+		[454] StaticText 'Primetime reservations at restaurants across the country'
+		[452] StaticText 'Explore all'
+		[456] heading 'View All'
+		[316] heading 'Browse all of Tock'
+		[318] button 'Load more'
+		[324] heading 'Buy a Tock gift card'
+		[329] StaticText 'Give a whole world of experiences, events, and wineries.'
+		[332] StaticText 'Learn more'
+		[333] heading 'Download the Tock app'
+		[338] StaticText 'Everything you love about Tock is now just a tap away. '
+		[341] StaticText 'Download it now'
+		[342] heading 'Use Tock at your business'
+		[347] StaticText 'Curious about our reservation and table management system? '
+		[350] StaticText 'Learn more'
+		[354] StaticText 'Tock home page'
+		[465] StaticText 'Support'
+		[469] StaticText 'Careers'
+		[473] StaticText 'Terms'
+		[477] StaticText 'Privacy'
+		[481] StaticText 'Instagram'
+		[485] StaticText 'Twitter'
+		[489] StaticText 'LinkedIn'
+		[493] StaticText 'Facebook'
+		[357] StaticText 'Explore Tock 2023'",click [381],[combobox]  Reservation type -> SELECT: Pickup,1,"[""[371] menuitem 'Pickup' selected: False"", ""\t\t\t[372] menuitem 'Delivery' selected: False"", ""\t\t\t[373] menuitem 'Events' selected: False"", ""\t\t\t[374] menuitem 'Wineries' selected: False"", ""\t\t\t[375] menuitem 'Everything' selected: False"", ""\t\t[376] StaticText 'Location'"", ""\t\t[170] textbox '' required: False"", ""\t\t\t[377] StaticText 'Columbus, OH'"", ""\t\t[381] StaticText 'Date'"", ""\t\t[178] textbox '' required: False"", ""\t\t\t[382] StaticText 'Thu, Mar 16'"", ""\t\t[383] StaticText 'Time'"", ""\t\t[185] combobox '' hasPopup: menu expanded: False"", ""\t\t\t[385] menuitem 'Now' selected: True"", ""\t\t\t[386] menuitem '9:00 PM' selected: False"", ""\t\t\t[387] menuitem '9:30 PM' selected: False"", ""\t\t\t[388] menuitem '10:00 PM' selected: False"", ""\t\t\t[389] menuitem '10:30 PM' selected: False"", ""\t\t\t[390] menuitem '11:00 PM' selected: False"", ""\t\t\t[391] menuitem '11:30 PM' selected: False"", ""\t\t[194] StaticText 'Search'"", ""\t\t[196] heading 'Explore all that Tock has to offer'"", ""\t\t[497] img 'Multiple dishes served with wine'"", ""\t\t[502] StaticText 'Dine in'"", ""\t\t[506] img 'Several bagged orders of food to-go'"", ""\t\t[511] StaticText 'Pickup'"", ""\t\t[515] img 'Opened container revealing a hamburger'"", ""\t\t[520] StaticText 'Delivery'"", ""\t\t[524] img 'Chef in a kitchen'"", ""\t\t[263] heading 'Chef Interviews, Stories, & Curated City Guides.'"", ""\t\t[267] StaticText 'Read the latest'"", ""\t\t[278] heading 'Wineries & Tasting Rooms'"", ""\t\t[443] StaticText 'Taste your way through varietals & vintages'"", ""\t\t[441] StaticText 'Explore all'"", ""\t\t[445] heading 'View All'"", ""\t\t[286] heading 'Reservations. Events. To-Go. The OnlyAll In One Solution.'"", ""\t\t[303] StaticText 'Tock is here to meet the ever-changing needs of hospitality.'"", ""\t\t[301] StaticText 'Learn more'"", ""\t\t[310] heading 'Chase Cardmember Tables'"", ""\t\t[454] StaticText 'Primetime reservations at restaurants across the country'""]","Let's think step-by-step. This page has several options to choose from. We have already selected ""Pickup"" as the reservation type. Now we need to select the location. The location textbox has the ID [170]. We can type ""Boston, NY"" in the location textbox. In summary, the next action I will perform is ```type [170] [Boston, NY] [1]```",0
+"Check for pickup restaurant available in Boston, NY on March 18, 5pm with just one guest","[395] StaticText 'Location'
+		[181] textbox '' required: False
+			[396] StaticText 'Columbus, OH'
+		[399] StaticText 'Date'
+		[189] textbox '' required: False
+			[400] StaticText 'Thu, Mar 16'
+		[401] StaticText 'Time'
+		[196] combobox '' hasPopup: menu expanded: False
+			[403] menuitem 'Now' selected: True
+			[404] menuitem '9:00 PM' selected: False
+			[405] menuitem '9:30 PM' selected: False
+			[406] menuitem '10:00 PM' selected: False
+			[407] menuitem '10:30 PM' selected: False
+			[408] menuitem '11:00 PM' selected: False
+			[409] menuitem '11:30 PM' selected: False
+		[205] StaticText 'Search'
+		[207] heading 'Explore all that Tock has to offer'
+		[520] img 'Multiple dishes served with wine'
+		[525] StaticText 'Dine in'
+		[529] img 'Several bagged orders of food to-go'
+		[534] StaticText 'Pickup'
+		[538] img 'Opened container revealing a hamburger'
+		[543] StaticText 'Delivery'
+		[547] img 'Chef in a kitchen'
+		[552] StaticText 'Events'
+		[556] img 'People strolling a vineyard sipping wine'
+		[561] StaticText 'Wineries'
+		[216] heading 'New & Notable'
+		[423] StaticText 'The latest & greatest on Tock'
+		[421] StaticText 'Explore all'
+		[563] link 'Agni Columbus, OH - Brewery District Grill'
+			[603] heading 'Agni'
+		[565] link 'Streetside 62 Bistro Washington Court House, OH Restaurant'
+			[614] heading 'Streetside 62 Bistro'
+		[567] link ""Hell's Backbone Grill & Farm Boulder, UT Four Corners Farm To Table""
+			[625] heading ""Hell's Backbone Grill & Farm""
+		[569] link 'Symposium Cincinnati, OH - East Walnut HIlls Wine Shop'
+			[636] heading 'Symposium'
+		[571] link 'The Merchant Tavern Akron, OH - Merriman Valley American'
+			[647] heading 'The Merchant Tavern'
+		[573] link ""Luigi's Ristorante Italiano Mason, OH Italian""
+			[658] heading ""Luigi's Ristorante Italiano""
+		[575] link 'Urban Grill on Main Cincinnati, OH - Village of Newtown American'
+			[669] heading 'Urban Grill on Main'
+		[577] link 'The Pickle and Pig Oxford, OH - Mile Square American'
+			[680] heading 'The Pickle and Pig'
+		[441] heading 'View All'
+		[226] heading ""Women's""
+		[227] heading 'History Month'
+		[238] StaticText 'Celebrating and supporting leading women '
+		[240] StaticText 'shaking up the industry.'
+		[236] StaticText 'Explore now'
+		[247] heading 'Tock To Go'
+		[450] StaticText 'Pickup and delivery meals'
+		[448] StaticText 'Explore all'
+		[452] heading 'View All'
+		[255] heading 'Tock Gift Cards'
+		[256] heading 'Give the delicious gift of Tock.'
+		[270] StaticText 'Share your love of great food and wine. For every occasion. Any amount. Never expires. Sure to delight.'
+		[261] StaticText 'Send a gift card'
+		[273] heading 'The Tock Blog'
+		[274] heading 'Chef Interviews, Stories, & Curated City Guides.'
+		[278] StaticText 'Read the latest'
+		[289] heading 'Wineries & Tasting Rooms'
+		[461] StaticText 'Taste your way through varietals & vintages'
+		[459] StaticText 'Explore all'
+		[463] heading 'View All'
+		[297] heading 'Reservations. Events. To-Go. The OnlyAll In One Solution.'
+		[314] StaticText 'Tock is here to meet the ever-changing needs of hospitality.'
+		[312] StaticText 'Learn more'
+		[321] heading 'Chase Cardmember Tables'
+		[472] StaticText 'Primetime reservations at restaurants across the country'
+		[470] StaticText 'Explore all'
+		[474] heading 'View All'
+		[327] heading 'Browse all of Tock'
+		[329] button 'Load more'
+		[335] heading 'Buy a Tock gift card'
+		[340] StaticText 'Give a whole world of experiences, events, and wineries.'
+		[343] StaticText 'Learn more'
+		[344] heading 'Download the Tock app'
+		[349] StaticText 'Everything you love about Tock is now just a tap away. '
+		[352] StaticText 'Download it now'
+		[353] heading 'Use Tock at your business'
+		[358] StaticText 'Curious about our reservation and table management system? '
+		[361] StaticText 'Learn more'
+		[365] StaticText 'Tock home page'
+		[483] StaticText 'Support'
+		[487] StaticText 'Careers'
+		[491] StaticText 'Terms'
+		[495] StaticText 'Privacy'
+		[499] StaticText 'Instagram'
+		[503] StaticText 'Twitter'
+		[507] StaticText 'LinkedIn'
+		[511] StaticText 'Facebook'
+		[368] StaticText 'Explore Tock 2023'
+	[94] dialog '' modal: False
+		[111] heading 'Where are you located?'
+		[371] searchbox 'Find a location'
+			[598] StaticText 'Columbus, OH, US'
+		[116] button 'Use current location'",type [371] [Boston],[combobox]  Reservation type -> SELECT: Pickup; [svg]   -> CLICK,0,"[""\t\t[399] StaticText 'Date'"", ""\t\t[189] textbox '' required: False"", ""\t\t\t[400] StaticText 'Thu, Mar 16'"", ""\t\t[401] StaticText 'Time'"", ""\t\t[196] combobox '' hasPopup: menu expanded: False"", ""\t\t\t[403] menuitem 'Now' selected: True"", ""\t\t\t[404] menuitem '9:00 PM' selected: False"", ""\t\t\t[405] menuitem '9:30 PM' selected: False"", ""\t\t\t[406] menuitem '10:00 PM' selected: False"", ""\t\t\t[407] menuitem '10:30 PM' selected: False"", ""\t\t\t[408] menuitem '11:00 PM' selected: False"", ""\t\t\t[409] menuitem '11:30 PM' selected: False"", ""\t\t[205] StaticText 'Search'"", ""\t\t[207] heading 'Explore all that Tock has to offer'"", ""\t\t[520] img 'Multiple dishes served with wine'"", ""\t\t[525] StaticText 'Dine in'"", ""\t\t[529] img 'Several bagged orders of food to-go'"", ""\t\t[534] StaticText 'Pickup'"", ""\t\t[538] img 'Opened container revealing a hamburger'"", ""\t\t[543] StaticText 'Delivery'"", ""\t\t[547] img 'Chef in a kitchen'"", ""\t\t[552] StaticText 'Events'"", ""\t\t[556] img 'People strolling a vineyard sipping wine'"", ""\t\t[561] StaticText 'Wineries'"", ""\t\t[216] heading 'New & Notable'"", ""\t\t[423] StaticText 'The latest & greatest on Tock'"", ""\t\t[421] StaticText 'Explore all'"", ""\t\t[563] link 'Agni Columbus, OH - Brewery District Grill'"", ""\t\t\t[603] heading 'Agni'"", ""\t\t[565] link 'Streetside 62 Bistro Washington Court House, OH Restaurant'"", ""\t\t\t[614] heading 'Streetside 62 Bistro'"", '\t\t[567] link ""Hell\'s Backbone Grill & Farm Boulder, UT Four Corners Farm To Table""', '\t\t\t[625] heading ""Hell\'s Backbone Grill & Farm""', ""\t\t[569] link 'Symposium Cincinnati, OH - East Walnut HIlls Wine Shop'"", ""\t\t\t[636] heading 'Symposium'"", ""\t\t[571] link 'The Merchant Tavern Akron, OH - Merriman Valley American'"", ""\t\t\t[647] heading 'The Merchant Tavern'"", '\t\t[573] link ""Luigi\'s Ristorante Italiano Mason, OH Italian""', '\t\t\t[658] heading ""Luigi\'s Ristorante Italiano""', ""\t\t\t[669] heading 'Urban Grill on Main'"", ""\t\t[577] link 'The Pickle and Pig Oxford, OH - Mile Square American'"", ""\t\t\t[680] heading 'The Pickle and Pig'"", ""\t\t[274] heading 'Chef Interviews, Stories, & Curated City Guides.'"", ""\t\t[278] StaticText 'Read the latest'"", ""\t\t[289] heading 'Wineries & Tasting Rooms'"", ""\t\t[461] StaticText 'Taste your way through varietals & vintages'"", ""\t\t[459] StaticText 'Explore all'"", ""\t\t[463] heading 'View All'"", ""\t\t[297] heading 'Reservations. Events. To-Go. The OnlyAll In One Solution.'"", ""\t\t[314] StaticText 'Tock is here to meet the ever-changing needs of hospitality.'"", ""\t\t[312] StaticText 'Learn more'"", ""\t\t[321] heading 'Chase Cardmember Tables'"", ""\t\t[472] StaticText 'Primetime reservations at restaurants across the country'"", ""\t\t[470] StaticText 'Explore all'"", ""\t\t[474] heading 'View All'"", ""\t\t[327] heading 'Browse all of Tock'"", ""\t\t[329] button 'Load more'"", ""\t\t[335] heading 'Buy a Tock gift card'""]
+		[371] searchbox 'Find a location'","Let's think step-by-step. To check for pickup restaurants available in Boston, NY on March 18, 5pm with just one guest, we need to fill out the required information. We have already selected the reservation type as Pickup. Now, we need to select the date, time, and number of guests. 
+
+From the observation, we can see that the date is already displayed as ""Thu, Mar 16"". We need to change it to ""Mar 18"". 
+
+To select the date, we need to click on the ""Date"" field. In summary, the next action I will perform is ```click [399]```",0
+"Check for pickup restaurant available in Boston, NY on March 18, 5pm with just one guest","[410] StaticText 'Thu, Mar 16'
+		[411] StaticText 'Time'
+		[207] combobox '' hasPopup: menu expanded: False
+			[413] menuitem 'Now' selected: True
+			[414] menuitem '9:00 PM' selected: False
+			[415] menuitem '9:30 PM' selected: False
+			[416] menuitem '10:00 PM' selected: False
+			[417] menuitem '10:30 PM' selected: False
+			[418] menuitem '11:00 PM' selected: False
+			[419] menuitem '11:30 PM' selected: False
+		[216] StaticText 'Search'
+		[218] heading 'Explore all that Tock has to offer'
+		[536] img 'Multiple dishes served with wine'
+		[541] StaticText 'Dine in'
+		[545] img 'Several bagged orders of food to-go'
+		[550] StaticText 'Pickup'
+		[554] img 'Opened container revealing a hamburger'
+		[559] StaticText 'Delivery'
+		[563] img 'Chef in a kitchen'
+		[568] StaticText 'Events'
+		[572] img 'People strolling a vineyard sipping wine'
+		[577] StaticText 'Wineries'
+		[227] heading 'New & Notable'
+		[433] StaticText 'The latest & greatest on Tock'
+		[431] StaticText 'Explore all'
+		[579] link 'Agni Columbus, OH - Brewery District Grill'
+			[659] heading 'Agni'
+		[581] link 'Streetside 62 Bistro Washington Court House, OH Restaurant'
+			[670] heading 'Streetside 62 Bistro'
+		[583] link ""Hell's Backbone Grill & Farm Boulder, UT Four Corners Farm To Table""
+			[681] heading ""Hell's Backbone Grill & Farm""
+		[585] link 'Symposium Cincinnati, OH - East Walnut HIlls Wine Shop'
+			[692] heading 'Symposium'
+		[587] link 'The Merchant Tavern Akron, OH - Merriman Valley American'
+			[703] heading 'The Merchant Tavern'
+		[589] link ""Luigi's Ristorante Italiano Mason, OH Italian""
+			[714] heading ""Luigi's Ristorante Italiano""
+		[591] link 'Urban Grill on Main Cincinnati, OH - Village of Newtown American'
+			[725] heading 'Urban Grill on Main'
+		[593] link 'The Pickle and Pig Oxford, OH - Mile Square American'
+			[736] heading 'The Pickle and Pig'
+		[451] heading 'View All'
+		[237] heading ""Women's""
+		[238] heading 'History Month'
+		[249] StaticText 'Celebrating and supporting leading women '
+		[251] StaticText 'shaking up the industry.'
+		[247] StaticText 'Explore now'
+		[258] heading 'Tock To Go'
+		[460] StaticText 'Pickup and delivery meals'
+		[458] StaticText 'Explore all'
+		[462] heading 'View All'
+		[266] heading 'Tock Gift Cards'
+		[267] heading 'Give the delicious gift of Tock.'
+		[281] StaticText 'Share your love of great food and wine. For every occasion. Any amount. Never expires. Sure to delight.'
+		[272] StaticText 'Send a gift card'
+		[284] heading 'The Tock Blog'
+		[285] heading 'Chef Interviews, Stories, & Curated City Guides.'
+		[289] StaticText 'Read the latest'
+		[300] heading 'Wineries & Tasting Rooms'
+		[471] StaticText 'Taste your way through varietals & vintages'
+		[469] StaticText 'Explore all'
+		[473] heading 'View All'
+		[308] heading 'Reservations. Events. To-Go. The OnlyAll In One Solution.'
+		[325] StaticText 'Tock is here to meet the ever-changing needs of hospitality.'
+		[323] StaticText 'Learn more'
+		[332] heading 'Chase Cardmember Tables'
+		[482] StaticText 'Primetime reservations at restaurants across the country'
+		[480] StaticText 'Explore all'
+		[484] heading 'View All'
+		[338] heading 'Browse all of Tock'
+		[340] button 'Load more'
+		[346] heading 'Buy a Tock gift card'
+		[351] StaticText 'Give a whole world of experiences, events, and wineries.'
+		[354] StaticText 'Learn more'
+		[355] heading 'Download the Tock app'
+		[360] StaticText 'Everything you love about Tock is now just a tap away. '
+		[363] StaticText 'Download it now'
+		[364] heading 'Use Tock at your business'
+		[369] StaticText 'Curious about our reservation and table management system? '
+		[372] StaticText 'Learn more'
+		[376] StaticText 'Tock home page'
+		[493] StaticText 'Support'
+		[497] StaticText 'Careers'
+		[501] StaticText 'Terms'
+		[505] StaticText 'Privacy'
+		[509] StaticText 'Instagram'
+		[513] StaticText 'Twitter'
+		[517] StaticText 'LinkedIn'
+		[521] StaticText 'Facebook'
+		[379] StaticText 'Explore Tock 2023'
+	[93] dialog '' modal: False
+		[122] heading 'Where are you located?'
+		[381] searchbox 'Find a location'
+			[614] StaticText 'Boston'
+		[527] button 'BostonMA, USA'
+		[528] button 'Boston HeightsOH, USA'
+		[530] button 'BostonNY, USA'
+		[531] button 'BostonOH, USA'
+		[532] button 'BostonIN, USA'
+		[127] button 'Use current location'",click [530],[combobox]  Reservation type -> SELECT: Pickup; [svg]   -> CLICK; [searchbox]  Find a location -> TYPE: Boston,0,"[""[410] StaticText 'Thu, Mar 16'"", ""\t\t[411] StaticText 'Time'"", ""\t\t[207] combobox '' hasPopup: menu expanded: False"", ""\t\t\t[413] menuitem 'Now' selected: True"", ""\t\t\t[414] menuitem '9:00 PM' selected: False"", ""\t\t\t[415] menuitem '9:30 PM' selected: False"", ""\t\t\t[416] menuitem '10:00 PM' selected: False"", ""\t\t\t[417] menuitem '10:30 PM' selected: False"", ""\t\t\t[418] menuitem '11:00 PM' selected: False"", ""\t\t\t[419] menuitem '11:30 PM' selected: False"", ""\t\t[216] StaticText 'Search'"", ""\t\t[218] heading 'Explore all that Tock has to offer'"", ""\t\t[536] img 'Multiple dishes served with wine'"", ""\t\t[541] StaticText 'Dine in'"", ""\t\t[545] img 'Several bagged orders of food to-go'"", ""\t\t[550] StaticText 'Pickup'"", ""\t\t[554] img 'Opened container revealing a hamburger'"", ""\t\t[559] StaticText 'Delivery'"", ""\t\t[563] img 'Chef in a kitchen'"", ""\t\t\t[725] heading 'Urban Grill on Main'"", ""\t\t[593] link 'The Pickle and Pig Oxford, OH - Mile Square American'"", ""\t\t\t[736] heading 'The Pickle and Pig'"", ""\t\t[451] heading 'View All'"", '\t\t[237] heading ""Women\'s""', ""\t\t[238] heading 'History Month'"", ""\t\t[249] StaticText 'Celebrating and supporting leading women '"", ""\t\t[251] StaticText 'shaking up the industry.'"", ""\t\t[285] heading 'Chef Interviews, Stories, & Curated City Guides.'"", ""\t\t[289] StaticText 'Read the latest'"", ""\t\t[300] heading 'Wineries & Tasting Rooms'"", ""\t\t[471] StaticText 'Taste your way through varietals & vintages'"", ""\t\t[469] StaticText 'Explore all'"", ""\t\t[473] heading 'View All'"", ""\t\t[308] heading 'Reservations. Events. To-Go. The OnlyAll In One Solution.'"", ""\t\t[325] StaticText 'Tock is here to meet the ever-changing needs of hospitality.'"", ""\t\t[323] StaticText 'Learn more'"", ""\t\t[332] heading 'Chase Cardmember Tables'"", ""\t\t[482] StaticText 'Primetime reservations at restaurants across the country'"", ""\t\t[480] StaticText 'Explore all'"", ""\t\t[484] heading 'View All'"", ""\t\t[338] heading 'Browse all of Tock'"", ""\t\t[340] button 'Load more'"", ""\t\t[346] heading 'Buy a Tock gift card'"", ""\t\t[351] StaticText 'Give a whole world of experiences, events, and wineries.'"", ""\t\t[354] StaticText 'Learn more'"", ""\t\t[355] heading 'Download the Tock app'"", ""\t\t[360] StaticText 'Everything you love about Tock is now just a tap away. '""]
+		[530] button 'BostonNY, USA'","Let's think step-by-step. We need to find a pickup restaurant available in Boston, NY on March 18 at 5pm with just one guest. 
+
+First, we have already selected the reservation type as pickup and entered ""Boston"" in the search box. Now, we need to select the date and time.
+
+From the observation, I see a combobox with id [207] that allows us to select the date and time. It looks like the ""Now"" option is already selected. Let's change it to the desired date and time. 
+
+In summary, the next action I will perform is `select [207]` to change the date and time.",0
+"Check for pickup restaurant available in Boston, NY on March 18, 5pm with just one guest","[1] RootWebArea '' focused: True
+	[98] StaticText 'Skip to main content'
+		[110] StaticText 'Use Tock at your business'
+	[128] button 'Book a reservation'
+	[129] button 'Reservations'
+	[130] button 'Search'
+	[132] button 'Profile image'
+		[367] img 'Profile image'
+		[148] StaticText 'DELICIOUS'
+		[150] StaticText 'STARTS'
+		[152] StaticText 'HERE.'
+		[368] StaticText 'Reservation type'
+		[166] combobox '' hasPopup: menu expanded: False
+			[370] menuitem 'Dine in' selected: True
+			[371] menuitem 'Pickup' selected: False
+			[372] menuitem 'Delivery' selected: False
+			[373] menuitem 'Events' selected: False
+			[374] menuitem 'Wineries' selected: False
+			[375] menuitem 'Everything' selected: False
+		[376] StaticText 'Location'
+		[170] textbox '' required: False
+			[377] StaticText 'Boston, NY'
+		[380] StaticText 'Date'
+		[178] textbox '' required: False
+			[381] StaticText 'Thu, Mar 16'
+		[385] StaticText 'Time'
+		[185] combobox '' hasPopup: menu expanded: False
+			[387] menuitem 'Now' selected: True
+			[388] menuitem '9:00 PM' selected: False
+			[389] menuitem '9:30 PM' selected: False
+			[390] menuitem '10:00 PM' selected: False
+			[391] menuitem '10:30 PM' selected: False
+			[392] menuitem '11:00 PM' selected: False
+			[393] menuitem '11:30 PM' selected: False
+		[194] StaticText 'Search'
+		[196] heading 'Explore all that Tock has to offer'
+		[499] img 'Multiple dishes served with wine'
+		[504] StaticText 'Dine in'
+		[508] img 'Several bagged orders of food to-go'
+		[513] StaticText 'Pickup'
+		[517] img 'Opened container revealing a hamburger'
+		[522] StaticText 'Delivery'
+		[526] img 'Chef in a kitchen'
+		[531] StaticText 'Events'
+		[535] img 'People strolling a vineyard sipping wine'
+		[540] StaticText 'Wineries'
+		[205] heading 'New & Notable'
+		[407] StaticText 'The latest & greatest on Tock'
+		[405] StaticText 'Explore all'
+		[542] link 'Bella Ciao Buffalo, NY Italian'
+			[581] heading 'Bella Ciao'
+		[544] link ""Hell's Backbone Grill & Farm Boulder, UT Four Corners Farm To Table""
+			[592] heading ""Hell's Backbone Grill & Farm""
+		[546] link 'Clover Hill Brooklyn, NY - Brooklyn Heights Contemporary'
+			[603] heading 'Clover Hill'
+		[548] link 'John Wick: Chapter 4 - The Continental Experience (NY) New York, NY Event'
+			[614] heading 'John Wick: Chapter 4 - The Continental Experience (NY)'
+		[550] link 'Locals Only Rochester, NY - East Avenue Breakfast, Lunch, And Brunch'
+			[625] heading 'Locals Only'
+		[552] link 'The Parlour Room: Phoenix Parlor Snug Series Featuring Teeling New York, NY'
+			[636] heading 'The Parlour Room: Phoenix Parlor Snug Series Featuring Teeling'
+		[554] link 'Hilton Alumni Association Hilton, NY Non-culinary'
+			[645] heading 'Hilton Alumni Association'
+		[556] link 'The Fourth Flight New York, NY American'
+			[656] heading 'The Fourth Flight'
+		[425] heading 'View All'
+		[215] heading ""Women's""
+		[216] heading 'History Month'
+		[227] StaticText 'Celebrating and supporting leading women '
+		[229] StaticText 'shaking up the industry.'
+		[225] StaticText 'Explore now'
+		[236] heading 'Tock To Go'
+		[434] StaticText 'Pickup and delivery meals'
+		[432] StaticText 'Explore all'
+		[436] heading 'View All'",click [385],[combobox]  Reservation type -> SELECT: Pickup; [svg]   -> CLICK; [searchbox]  Find a location -> TYPE: Boston; [span]  Boston -> CLICK,1,"[""\t[129] button 'Reservations'"", ""\t[130] button 'Search'"", ""\t[132] button 'Profile image'"", ""\t\t[367] img 'Profile image'"", ""\t\t[148] StaticText 'DELICIOUS'"", ""\t\t[150] StaticText 'STARTS'"", ""\t\t[152] StaticText 'HERE.'"", ""\t\t[368] StaticText 'Reservation type'"", ""\t\t[166] combobox '' hasPopup: menu expanded: False"", ""\t\t\t[370] menuitem 'Dine in' selected: True"", ""\t\t\t[371] menuitem 'Pickup' selected: False"", ""\t\t\t[372] menuitem 'Delivery' selected: False"", ""\t\t\t[373] menuitem 'Events' selected: False"", ""\t\t\t[374] menuitem 'Wineries' selected: False"", ""\t\t\t[375] menuitem 'Everything' selected: False"", ""\t\t[376] StaticText 'Location'"", ""\t\t[170] textbox '' required: False"", ""\t\t\t[377] StaticText 'Boston, NY'"", ""\t\t[380] StaticText 'Date'"", ""\t\t[178] textbox '' required: False"", ""\t\t\t[381] StaticText 'Thu, Mar 16'"", ""\t\t[385] StaticText 'Time'"", ""\t\t[185] combobox '' hasPopup: menu expanded: False"", ""\t\t\t[387] menuitem 'Now' selected: True"", ""\t\t\t[388] menuitem '9:00 PM' selected: False"", ""\t\t\t[389] menuitem '9:30 PM' selected: False"", ""\t\t\t[390] menuitem '10:00 PM' selected: False"", ""\t\t\t[391] menuitem '10:30 PM' selected: False"", ""\t\t\t[392] menuitem '11:00 PM' selected: False"", ""\t\t\t[393] menuitem '11:30 PM' selected: False"", ""\t\t[194] StaticText 'Search'"", ""\t\t[196] heading 'Explore all that Tock has to offer'"", ""\t\t[499] img 'Multiple dishes served with wine'"", ""\t\t[504] StaticText 'Dine in'"", ""\t\t[508] img 'Several bagged orders of food to-go'"", ""\t\t[513] StaticText 'Pickup'"", ""\t\t[517] img 'Opened container revealing a hamburger'"", ""\t\t[522] StaticText 'Delivery'"", ""\t\t[526] img 'Chef in a kitchen'""]","Let's think step-by-step. This page has a combobox for reservation type with ID [166]. We have already selected Pickup. Now, we need to fill in the location. The textbox for location has ID [170]. We need to type ""Boston, NY"" in it. Then, we need to select the date. The textbox for date has ID [178]. We need to type ""Thu, Mar 18"" in it. Lastly, we need to select the time. The combobox for time has ID [185]. We need to select ""5:00 PM"" from it. In summary, the next action I will perform is ```type [170] [Boston, NY] [0]```",0
+"Check for pickup restaurant available in Boston, NY on March 18, 5pm with just one guest","[474] gridcell '9' required: False
+					[1184] button '9'
+				[475] gridcell '10' required: False
+					[1187] button '10'
+				[476] gridcell '11' required: False
+					[1190] button '11'
+				[477] gridcell '12' required: False
+					[1193] button '12'
+				[478] gridcell '13' required: False
+					[1196] button '13'
+				[479] gridcell '14' required: False
+					[1199] button '14'
+				[480] gridcell '15' required: False
+					[1202] button '15'
+				[481] gridcell '16' required: False
+					[1205] button '16'
+				[482] gridcell '17' required: False
+					[1208] button '17'
+				[483] gridcell ' 18' required: False
+					[1212] button '18'
+				[484] gridcell '19' required: False
+					[1215] button '19'
+				[485] gridcell '20' required: False
+					[1218] button '20'
+				[486] gridcell '21' required: False
+					[1221] button '21'
+				[487] gridcell '22' required: False
+					[1224] button '22'
+				[488] gridcell '23' required: False
+					[1227] button '23'
+				[489] gridcell '24' required: False
+					[1230] button '24'
+				[490] gridcell '25' required: False
+					[1233] button '25'
+				[491] gridcell '26' required: False
+					[1236] button '26'
+				[492] gridcell '27' required: False
+					[1239] button '27'
+				[493] gridcell '28' required: False
+					[1242] button '28'
+				[494] gridcell '29' required: False
+					[1245] button '29'
+				[495] gridcell '30' required: False
+					[1248] button '30'
+				[496] gridcell '31' required: False
+					[1251] button '31'
+		[139] grid '' multiselectable: False
+				[503] gridcell '1' required: False
+					[1254] button '1'
+				[504] gridcell '2' required: False
+					[1257] button '2'
+				[505] gridcell '3' required: False
+					[1260] button '3'
+				[506] gridcell '4' required: False
+					[1263] button '4'
+				[507] gridcell '5' required: False
+					[1266] button '5'
+				[508] gridcell '6' required: False
+					[1269] button '6'
+				[509] gridcell '7' required: False
+					[1272] button '7'
+				[510] gridcell '8' required: False
+					[1275] button '8'
+				[511] gridcell '9' required: False
+					[1278] button '9'
+				[512] gridcell '10' required: False
+					[1281] button '10'
+				[513] gridcell '11' required: False
+					[1284] button '11'
+				[514] gridcell '12' required: False
+					[1287] button '12'
+				[515] gridcell '13' required: False
+					[1290] button '13'
+				[516] gridcell '14' required: False
+					[1293] button '14'
+				[517] gridcell '15' required: False
+					[1296] button '15'
+				[518] gridcell '16' required: False
+					[1299] button '16'
+				[519] gridcell '17' required: False
+					[1302] button '17'
+				[520] gridcell '18' required: False
+					[1305] button '18'
+				[521] gridcell '19' required: False
+					[1308] button '19'
+				[522] gridcell '20' required: False
+					[1311] button '20'
+				[523] gridcell '21' required: False
+					[1314] button '21'
+				[524] gridcell '22' required: False
+					[1317] button '22'
+				[525] gridcell '23' required: False
+					[1320] button '23'
+				[526] gridcell '24' required: False
+					[1323] button '24'
+				[527] gridcell '25' required: False
+					[1326] button '25'
+				[528] gridcell '26' required: False
+					[1329] button '26'
+				[529] gridcell '27' required: False",click [483],[combobox]  Reservation type -> SELECT: Pickup; [svg]   -> CLICK; [searchbox]  Find a location -> TYPE: Boston; [span]  Boston -> CLICK; [svg]   -> CLICK,1,"[""\t\t\t\t[476] gridcell '11' required: False"", ""\t\t\t\t\t[1190] button '11'"", ""\t\t\t\t[477] gridcell '12' required: False"", ""\t\t\t\t\t[1193] button '12'"", ""\t\t\t\t[478] gridcell '13' required: False"", ""\t\t\t\t\t[1196] button '13'"", ""\t\t\t\t[479] gridcell '14' required: False"", ""\t\t\t\t\t[1199] button '14'"", ""\t\t\t\t[480] gridcell '15' required: False"", ""\t\t\t\t\t[1202] button '15'"", ""\t\t\t\t[481] gridcell '16' required: False"", ""\t\t\t\t\t[1205] button '16'"", ""\t\t\t\t[482] gridcell '17' required: False"", ""\t\t\t\t\t[1208] button '17'"", ""\t\t\t\t[483] gridcell ' 18' required: False"", ""\t\t\t\t\t[1212] button '18'"", ""\t\t\t\t[484] gridcell '19' required: False"", ""\t\t\t\t\t[1215] button '19'"", ""\t\t\t\t[485] gridcell '20' required: False"", ""\t\t\t\t\t[1218] button '20'"", ""\t\t\t\t[486] gridcell '21' required: False"", ""\t\t\t\t\t[1221] button '21'"", ""\t\t\t\t[487] gridcell '22' required: False"", ""\t\t\t\t\t[1224] button '22'"", ""\t\t\t\t[488] gridcell '23' required: False"", ""\t\t\t\t\t[1227] button '23'"", ""\t\t\t\t[489] gridcell '24' required: False"", ""\t\t\t\t\t[1230] button '24'"", ""\t\t\t\t[490] gridcell '25' required: False"", ""\t\t\t\t\t[1233] button '25'"", ""\t\t\t\t[491] gridcell '26' required: False"", ""\t\t\t\t\t[1236] button '26'"", ""\t\t\t\t[492] gridcell '27' required: False"", ""\t\t\t\t\t[1239] button '27'"", ""\t\t\t\t[493] gridcell '28' required: False""]","Let's think step-by-step. This page displays a grid of available time slots for pickup restaurants. The grid shows the available time slots from 11 am to 5 pm. To check for pickup restaurant availability in Boston, NY on March 18 at 5 pm with just one guest, I need to click on the button for the corresponding time slot. The button for 5 pm is [1236]. In summary, the next action I will perform is ```click [1236]```",0
+"Check for pickup restaurant available in Boston, NY on March 18, 5pm with just one guest","[1] RootWebArea '' focused: True
+	[98] StaticText 'Skip to main content'
+		[110] StaticText 'Use Tock at your business'
+	[128] button 'Book a reservation'
+	[129] button 'Reservations'
+	[130] button 'Search'
+	[132] button 'Profile image'
+		[368] img 'Profile image'
+		[148] StaticText 'DELICIOUS'
+		[150] StaticText 'STARTS'
+		[152] StaticText 'HERE.'
+		[369] StaticText 'Reservation type'
+		[166] combobox '' hasPopup: menu expanded: False
+			[371] menuitem 'Dine in' selected: True
+			[372] menuitem 'Pickup' selected: False
+			[373] menuitem 'Delivery' selected: False
+			[374] menuitem 'Events' selected: False
+			[375] menuitem 'Wineries' selected: False
+			[376] menuitem 'Everything' selected: False
+		[377] StaticText 'Location'
+		[170] textbox '' required: False
+			[378] StaticText 'Boston, NY'
+		[381] StaticText 'Date'
+		[178] textbox '' required: False
+			[382] StaticText 'Sat, Mar 18'
+		[385] StaticText 'Time'
+		[186] combobox '' hasPopup: menu expanded: False
+			[387] menuitem '12:00 AM' selected: True
+			[388] menuitem '12:30 AM' selected: False
+			[389] menuitem '1:00 AM' selected: False
+			[390] menuitem '1:30 AM' selected: False
+			[391] menuitem '2:00 AM' selected: False
+			[392] menuitem '2:30 AM' selected: False
+			[393] menuitem '3:00 AM' selected: False
+			[394] menuitem '3:30 AM' selected: False
+			[395] menuitem '4:00 AM' selected: False
+			[396] menuitem '4:30 AM' selected: False
+			[397] menuitem '5:00 AM' selected: False
+			[398] menuitem '5:30 AM' selected: False
+			[399] menuitem '6:00 AM' selected: False
+			[400] menuitem '6:30 AM' selected: False
+			[401] menuitem '7:00 AM' selected: False
+			[402] menuitem '7:30 AM' selected: False
+			[403] menuitem '8:00 AM' selected: False
+			[404] menuitem '8:30 AM' selected: False
+			[405] menuitem '9:00 AM' selected: False
+			[406] menuitem '9:30 AM' selected: False
+			[407] menuitem '10:00 AM' selected: False
+			[408] menuitem '10:30 AM' selected: False
+			[409] menuitem '11:00 AM' selected: False
+			[410] menuitem '11:30 AM' selected: False
+			[411] menuitem '12:00 PM' selected: False
+			[412] menuitem '12:30 PM' selected: False
+			[413] menuitem '1:00 PM' selected: False
+			[414] menuitem '1:30 PM' selected: False
+			[415] menuitem '2:00 PM' selected: False
+			[416] menuitem '2:30 PM' selected: False
+			[417] menuitem '3:00 PM' selected: False
+			[418] menuitem '3:30 PM' selected: False
+			[419] menuitem '4:00 PM' selected: False
+			[420] menuitem '4:30 PM' selected: False
+			[421] menuitem '5:00 PM' selected: False
+			[422] menuitem '5:30 PM' selected: False
+			[423] menuitem '6:00 PM' selected: False
+			[424] menuitem '6:30 PM' selected: False
+			[425] menuitem '7:00 PM' selected: False
+			[426] menuitem '7:30 PM' selected: False
+			[427] menuitem '8:00 PM' selected: False
+			[428] menuitem '8:30 PM' selected: False
+			[429] menuitem '9:00 PM' selected: False
+			[430] menuitem '9:30 PM' selected: False
+			[431] menuitem '10:00 PM' selected: False
+			[432] menuitem '10:30 PM' selected: False
+			[433] menuitem '11:00 PM' selected: False
+			[434] menuitem '11:30 PM' selected: False
+		[195] StaticText 'Search'
+		[197] heading 'Explore all that Tock has to offer'
+		[540] img 'Multiple dishes served with wine'
+		[545] StaticText 'Dine in'
+		[549] img 'Several bagged orders of food to-go'
+		[554] StaticText 'Pickup'
+		[558] img 'Opened container revealing a hamburger'
+		[563] StaticText 'Delivery'
+		[567] img 'Chef in a kitchen'
+		[572] StaticText 'Events'
+		[576] img 'People strolling a vineyard sipping wine'
+		[581] StaticText 'Wineries'
+		[206] heading 'New & Notable'
+		[448] StaticText 'The latest & greatest on Tock'
+		[446] StaticText 'Explore all'",click [186],[combobox]  Reservation type -> SELECT: Pickup; [svg]   -> CLICK; [searchbox]  Find a location -> TYPE: Boston; [span]  Boston -> CLICK; [svg]   -> CLICK; [button]  18 -> CLICK,1,"[""\t[129] button 'Reservations'"", ""\t[130] button 'Search'"", ""\t[132] button 'Profile image'"", ""\t\t[368] img 'Profile image'"", ""\t\t[148] StaticText 'DELICIOUS'"", ""\t\t[150] StaticText 'STARTS'"", ""\t\t[152] StaticText 'HERE.'"", ""\t\t[369] StaticText 'Reservation type'"", ""\t\t[166] combobox '' hasPopup: menu expanded: False"", ""\t\t\t[371] menuitem 'Dine in' selected: True"", ""\t\t\t[372] menuitem 'Pickup' selected: False"", ""\t\t\t[373] menuitem 'Delivery' selected: False"", ""\t\t\t[374] menuitem 'Events' selected: False"", ""\t\t\t[375] menuitem 'Wineries' selected: False"", ""\t\t\t[376] menuitem 'Everything' selected: False"", ""\t\t[377] StaticText 'Location'"", ""\t\t[170] textbox '' required: False"", ""\t\t\t[378] StaticText 'Boston, NY'"", ""\t\t[381] StaticText 'Date'"", ""\t\t[178] textbox '' required: False"", ""\t\t\t[382] StaticText 'Sat, Mar 18'"", ""\t\t[385] StaticText 'Time'"", ""\t\t[186] combobox '' hasPopup: menu expanded: False"", ""\t\t\t[387] menuitem '12:00 AM' selected: True"", ""\t\t\t[388] menuitem '12:30 AM' selected: False"", ""\t\t\t[389] menuitem '1:00 AM' selected: False"", ""\t\t\t[390] menuitem '1:30 AM' selected: False"", ""\t\t\t[391] menuitem '2:00 AM' selected: False"", ""\t\t\t[392] menuitem '2:30 AM' selected: False"", ""\t\t\t[393] menuitem '3:00 AM' selected: False"", ""\t\t\t[394] menuitem '3:30 AM' selected: False"", ""\t\t\t[395] menuitem '4:00 AM' selected: False"", ""\t\t\t[396] menuitem '4:30 AM' selected: False""]","Let's think step-by-step. We are on the reservations page. To search for a pickup restaurant in Boston, NY on March 18, at 5pm, with just one guest, we need to fill in the following details:
+- Reservation type: Pickup
+- Location: Boston, NY
+- Date: Sat, Mar 18
+- Time: 5:00 PM
+- Number of guests: 1
+
+Let's start by selecting the reservation type as Pickup. In summary, the next action I will perform is `select [166]`.",0
+"Check for pickup restaurant available in Boston, NY on March 18, 5pm with just one guest","[406] menuitem '10:00 AM' selected: False
+			[407] menuitem '10:30 AM' selected: False
+			[408] menuitem '11:00 AM' selected: False
+			[409] menuitem '11:30 AM' selected: False
+			[410] menuitem '12:00 PM' selected: False
+			[411] menuitem '12:30 PM' selected: False
+			[412] menuitem '1:00 PM' selected: False
+			[413] menuitem '1:30 PM' selected: False
+			[414] menuitem '2:00 PM' selected: False
+			[415] menuitem '2:30 PM' selected: False
+			[416] menuitem '3:00 PM' selected: False
+			[417] menuitem '3:30 PM' selected: False
+			[418] menuitem '4:00 PM' selected: False
+			[419] menuitem '4:30 PM' selected: False
+			[420] menuitem '5:00 PM' selected: False
+			[421] menuitem '5:30 PM' selected: False
+			[422] menuitem '6:00 PM' selected: False
+			[423] menuitem '6:30 PM' selected: False
+			[424] menuitem '7:00 PM' selected: False
+			[425] menuitem '7:30 PM' selected: False
+			[426] menuitem '8:00 PM' selected: False
+			[427] menuitem '8:30 PM' selected: False
+			[428] menuitem '9:00 PM' selected: False
+			[429] menuitem '9:30 PM' selected: False
+			[430] menuitem '10:00 PM' selected: False
+			[431] menuitem '10:30 PM' selected: False
+			[432] menuitem '11:00 PM' selected: False
+			[433] menuitem '11:30 PM' selected: False
+		[194] StaticText 'Search'
+		[196] heading 'Explore all that Tock has to offer'
+		[539] img 'Multiple dishes served with wine'
+		[544] StaticText 'Dine in'
+		[548] img 'Several bagged orders of food to-go'
+		[553] StaticText 'Pickup'
+		[557] img 'Opened container revealing a hamburger'
+		[562] StaticText 'Delivery'
+		[566] img 'Chef in a kitchen'
+		[571] StaticText 'Events'
+		[575] img 'People strolling a vineyard sipping wine'
+		[580] StaticText 'Wineries'
+		[205] heading 'New & Notable'
+		[447] StaticText 'The latest & greatest on Tock'
+		[445] StaticText 'Explore all'
+		[582] link 'Bella Ciao Buffalo, NY Italian'
+			[621] heading 'Bella Ciao'
+		[584] link ""Hell's Backbone Grill & Farm Boulder, UT Four Corners Farm To Table""
+			[632] heading ""Hell's Backbone Grill & Farm""
+		[586] link 'Clover Hill Brooklyn, NY - Brooklyn Heights Contemporary'
+			[643] heading 'Clover Hill'
+		[588] link 'John Wick: Chapter 4 - The Continental Experience (NY) New York, NY Event'
+			[654] heading 'John Wick: Chapter 4 - The Continental Experience (NY)'
+		[590] link 'Locals Only Rochester, NY - East Avenue Breakfast, Lunch, And Brunch'
+			[665] heading 'Locals Only'
+		[592] link 'The Parlour Room: Phoenix Parlor Snug Series Featuring Teeling New York, NY'
+			[676] heading 'The Parlour Room: Phoenix Parlor Snug Series Featuring Teeling'
+		[594] link 'Hilton Alumni Association Hilton, NY Non-culinary'
+			[685] heading 'Hilton Alumni Association'
+		[596] link 'The Fourth Flight New York, NY American'
+			[696] heading 'The Fourth Flight'
+		[465] heading 'View All'
+		[215] heading ""Women's""
+		[216] heading 'History Month'
+		[227] StaticText 'Celebrating and supporting leading women '
+		[229] StaticText 'shaking up the industry.'
+		[225] StaticText 'Explore now'
+		[236] heading 'Tock To Go'
+		[474] StaticText 'Pickup and delivery meals'
+		[472] StaticText 'Explore all'
+		[476] heading 'View All'
+		[244] heading 'Tock Gift Cards'
+		[245] heading 'Give the delicious gift of Tock.'
+		[259] StaticText 'Share your love of great food and wine. For every occasion. Any amount. Never expires. Sure to delight.'
+		[250] StaticText 'Send a gift card'
+		[262] heading 'The Tock Blog'
+		[263] heading 'Chef Interviews, Stories, & Curated City Guides.'
+		[267] StaticText 'Read the latest'
+		[278] heading 'Wineries & Tasting Rooms'
+		[485] StaticText 'Taste your way through varietals & vintages'
+		[483] StaticText 'Explore all'
+		[487] heading 'View All'
+		[286] heading 'Reservations. Events. To-Go. The OnlyAll In One Solution.'
+		[303] StaticText 'Tock is here to meet the ever-changing needs of hospitality.'
+		[301] StaticText 'Learn more'
+		[310] heading 'Chase Cardmember Tables'
+		[496] StaticText 'Primetime reservations at restaurants across the country'
+		[494] StaticText 'Explore all'
+		[498] heading 'View All'
+		[316] heading 'Browse all of Tock'
+		[318] button 'Load more'
+		[324] heading 'Buy a Tock gift card'
+		[329] StaticText 'Give a whole world of experiences, events, and wineries.'
+		[332] StaticText 'Learn more'
+		[333] heading 'Download the Tock app'
+		[338] StaticText 'Everything you love about Tock is now just a tap away. '
+		[341] StaticText 'Download it now'
+		[342] heading 'Use Tock at your business'
+		[347] StaticText 'Curious about our reservation and table management system? '
+		[350] StaticText 'Learn more'
+		[354] StaticText 'Tock home page'
+		[507] StaticText 'Support'",click [194],[combobox]  Reservation type -> SELECT: Pickup; [svg]   -> CLICK; [searchbox]  Find a location -> TYPE: Boston; [span]  Boston -> CLICK; [svg]   -> CLICK; [button]  18 -> CLICK; [combobox]  Time -> SELECT: 5:00 PM,0,"[""\t\t\t[410] menuitem '12:00 PM' selected: False"", ""\t\t\t[411] menuitem '12:30 PM' selected: False"", ""\t\t\t[412] menuitem '1:00 PM' selected: False"", ""\t\t\t[413] menuitem '1:30 PM' selected: False"", ""\t\t\t[414] menuitem '2:00 PM' selected: False"", ""\t\t\t[415] menuitem '2:30 PM' selected: False"", ""\t\t\t[416] menuitem '3:00 PM' selected: False"", ""\t\t\t[417] menuitem '3:30 PM' selected: False"", ""\t\t\t[418] menuitem '4:00 PM' selected: False"", ""\t\t\t[419] menuitem '4:30 PM' selected: False"", ""\t\t\t[420] menuitem '5:00 PM' selected: False"", ""\t\t\t[421] menuitem '5:30 PM' selected: False"", ""\t\t\t[422] menuitem '6:00 PM' selected: False"", ""\t\t\t[423] menuitem '6:30 PM' selected: False"", ""\t\t\t[424] menuitem '7:00 PM' selected: False"", ""\t\t\t[425] menuitem '7:30 PM' selected: False"", ""\t\t\t[426] menuitem '8:00 PM' selected: False"", ""\t\t\t[427] menuitem '8:30 PM' selected: False"", ""\t\t\t[428] menuitem '9:00 PM' selected: False"", ""\t\t\t[429] menuitem '9:30 PM' selected: False"", ""\t\t\t[430] menuitem '10:00 PM' selected: False"", ""\t\t\t[431] menuitem '10:30 PM' selected: False"", ""\t\t\t[432] menuitem '11:00 PM' selected: False"", ""\t\t[263] heading 'Chef Interviews, Stories, & Curated City Guides.'"", ""\t\t[267] StaticText 'Read the latest'"", ""\t\t[278] heading 'Wineries & Tasting Rooms'""]
+		[194] StaticText 'Search'","Let's think step-by-step. The objective is to check for a pickup restaurant available in Boston, NY on March 18 at 5pm with just one guest. We have already selected the pickup reservation type, entered ""Boston"" as the location, selected Boston from the search results, selected ""18"" as the day, and selected ""5:00 PM"" as the time. 
+
+Now, we need to select the number of guests. I see that there is a combobox element for the number of guests. In this case, we only need to select 1 guest. 
+
+In summary, the next action I will perform is `select [id_of_combobox_for_guests]`",0
+"Check for pickup restaurant available in Boston, NY on March 18, 5pm with just one guest","[1] RootWebArea '' focused: True
+	[51] StaticText 'Skip to main content'
+	[60] button 'Boston, NY'
+	[70] button 'Book a reservation'
+	[71] button 'Reservations'
+	[72] button 'Search'
+	[74] button 'Profile image'
+		[202] img 'Profile image'
+		[79] button 'Mar 185:00 PM2 guests'
+		[82] button 'Pickup'
+		[83] button 'Boston, NY'
+		[84] StaticText ' '
+		[85] button 'Mar 185:00 PM2 guests'
+		[86] button 'More filters'
+		[261] heading 'Compass Run'
+		[281] StaticText '18.2 miles'
+		[283] StaticText 'South Ellicott $$ southern casual'
+		[286] button 'Compass Run To Go'
+			[287] heading 'Compass Run To Go'
+		[324] StaticText 'Prepaid pickup'
+		[295] StaticText 'Order now'
+		[296] button 'View menu'
+		[271] heading 'Toutant'
+		[299] StaticText '19.3 miles'
+		[301] StaticText 'Downtown Cajun'
+		[304] button 'Toutant2Geaux'
+			[305] heading 'Toutant2Geaux'
+		[327] StaticText 'Prepaid pickup'
+		[313] StaticText 'Order now'
+		[314] button 'View menu'
+		[90] button 'Map'
+		[105] button 'Keyboard shortcuts'
+		[149] button 'Toggle fullscreen view'
+		[151] generic 'Open this area in Google Maps (opens a new window)'
+			[276] img 'Google'
+		[160] button 'Keyboard shortcuts'
+		[163] button 'Map Data'
+		[166] StaticText 'Map data 2023 Google'
+		[155] button '500 m Click to toggle between metric and imperial units'
+		[177] StaticText 'Terms of Use'
+		[179] generic 'Report errors in the road map or imagery to Google'
+			[241] StaticText 'Report a map error'
+		[182] button 'Search this area'
+		[186] button 'Zoom in'
+		[187] button 'Zoom out'
+		[189] button 'Current location'
+	[45] menu '' orientation: vertical",click [84],[combobox]  Reservation type -> SELECT: Pickup; [svg]   -> CLICK; [searchbox]  Find a location -> TYPE: Boston; [span]  Boston -> CLICK; [svg]   -> CLICK; [button]  18 -> CLICK; [combobox]  Time -> SELECT: 5:00 PM; [svg]   -> CLICK,1,"[""[1] RootWebArea '' focused: True"", ""\t[51] StaticText 'Skip to main content'"", ""\t[60] button 'Boston, NY'"", ""\t[70] button 'Book a reservation'"", ""\t[71] button 'Reservations'"", ""\t[72] button 'Search'"", ""\t[74] button 'Profile image'"", ""\t\t[202] img 'Profile image'"", ""\t\t[79] button 'Mar 185:00 PM2 guests'"", ""\t\t[82] button 'Pickup'"", ""\t\t[83] button 'Boston, NY'"", ""\t\t[84] StaticText ' '"", ""\t\t[85] button 'Mar 185:00 PM2 guests'"", ""\t\t[86] button 'More filters'"", ""\t\t[261] heading 'Compass Run'"", ""\t\t[281] StaticText '18.2 miles'"", ""\t\t[283] StaticText 'South Ellicott $$ southern casual'"", ""\t\t[286] button 'Compass Run To Go'"", ""\t\t\t[287] heading 'Compass Run To Go'"", ""\t\t[324] StaticText 'Prepaid pickup'"", ""\t\t[295] StaticText 'Order now'"", ""\t\t[296] button 'View menu'"", ""\t\t[271] heading 'Toutant'"", ""\t\t[299] StaticText '19.3 miles'"", ""\t\t[301] StaticText 'Downtown Cajun'"", ""\t\t[304] button 'Toutant2Geaux'"", ""\t\t\t[305] heading 'Toutant2Geaux'"", ""\t\t[327] StaticText 'Prepaid pickup'"", ""\t\t[313] StaticText 'Order now'"", ""\t\t[314] button 'View menu'"", ""\t\t[90] button 'Map'"", ""\t\t[105] button 'Keyboard shortcuts'"", ""\t\t[149] button 'Toggle fullscreen view'"", ""\t\t[151] generic 'Open this area in Google Maps (opens a new window)'"", ""\t\t\t[276] img 'Google'""]","Let's think step-by-step. The objective is to check for pickup restaurants available in Boston, NY on March 18, 5pm with just one guest. 
+
+To accomplish this, we need to perform the following actions:
+1. Select the number of guests as 2 by clicking on the button with the text ""2 guests"".
+2. Select the pickup option by clicking on the button with the text ""Pickup"".
+3. Select the location as Boston, NY by clicking on the button with the text ""Boston, NY"".
+4. Select the date as March 18th by clicking on the button with the text ""Mar 18"".
+5. Select the time as 5:00 PM by selecting it from the combobox.
+6. Check for pickup restaurants available.
+
+In summary, the next action I will perform is ```click [79]``` to select the number of guests as 2.",0
+"Check for pickup restaurant available in Boston, NY on March 18, 5pm with just one guest","[142] menuitem '2:45 AM' selected: False
+		[143] menuitem '3:00 AM' selected: False
+		[144] menuitem '3:15 AM' selected: False
+		[145] menuitem '3:30 AM' selected: False
+		[146] menuitem '3:45 AM' selected: False
+		[147] menuitem '4:00 AM' selected: False
+		[148] menuitem '4:15 AM' selected: False
+		[149] menuitem '4:30 AM' selected: False
+		[150] menuitem '4:45 AM' selected: False
+		[151] menuitem '5:00 AM' selected: False
+		[152] menuitem '5:15 AM' selected: False
+		[153] menuitem '5:30 AM' selected: False
+		[154] menuitem '5:45 AM' selected: False
+		[155] menuitem '6:00 AM' selected: False
+		[156] menuitem '6:15 AM' selected: False
+		[157] menuitem '6:30 AM' selected: False
+		[158] menuitem '6:45 AM' selected: False
+		[159] menuitem '7:00 AM' selected: False
+		[160] menuitem '7:15 AM' selected: False
+		[161] menuitem '7:30 AM' selected: False
+		[162] menuitem '7:45 AM' selected: False
+		[163] menuitem '8:00 AM' selected: False
+		[164] menuitem '8:15 AM' selected: False
+		[165] menuitem '8:30 AM' selected: False
+		[166] menuitem '8:45 AM' selected: False
+		[167] menuitem '9:00 AM' selected: False
+		[168] menuitem '9:15 AM' selected: False
+		[169] menuitem '9:30 AM' selected: False
+		[170] menuitem '9:45 AM' selected: False
+		[171] menuitem '10:00 AM' selected: False
+		[172] menuitem '10:15 AM' selected: False
+		[173] menuitem '10:30 AM' selected: False
+		[174] menuitem '10:45 AM' selected: False
+		[175] menuitem '11:00 AM' selected: False
+		[176] menuitem '11:15 AM' selected: False
+		[177] menuitem '11:30 AM' selected: False
+		[178] menuitem '11:45 AM' selected: False
+		[179] menuitem '12:00 PM' selected: False
+		[180] menuitem '12:15 PM' selected: False
+		[181] menuitem '12:30 PM' selected: False
+		[182] menuitem '12:45 PM' selected: False
+		[183] menuitem '1:00 PM' selected: False
+		[184] menuitem '1:15 PM' selected: False
+		[185] menuitem '1:30 PM' selected: False
+		[186] menuitem '1:45 PM' selected: False
+		[187] menuitem '2:00 PM' selected: False
+		[188] menuitem '2:15 PM' selected: False
+		[189] menuitem '2:30 PM' selected: False
+		[190] menuitem '2:45 PM' selected: False
+		[191] menuitem '3:00 PM' selected: False
+		[192] menuitem '3:15 PM' selected: False
+		[193] menuitem '3:30 PM' selected: False
+		[194] menuitem '3:45 PM' selected: False
+		[195] menuitem '4:00 PM' selected: False
+		[196] menuitem '4:15 PM' selected: False
+		[197] menuitem '4:30 PM' selected: False
+		[198] menuitem '4:45 PM' selected: False
+		[199] menuitem '5:00 PM' selected: False
+		[200] menuitem '5:15 PM' selected: False
+		[201] menuitem '5:30 PM' selected: False
+		[202] menuitem '5:45 PM' selected: False
+		[203] menuitem '6:00 PM' selected: False
+		[204] menuitem '6:15 PM' selected: False
+		[205] menuitem '6:30 PM' selected: False
+		[206] menuitem '6:45 PM' selected: False
+		[207] menuitem '7:00 PM' selected: False
+		[208] menuitem '7:15 PM' selected: False
+		[209] menuitem '7:30 PM' selected: False
+		[210] menuitem '7:45 PM' selected: False
+		[211] menuitem '8:00 PM' selected: False
+		[212] menuitem '8:15 PM' selected: False
+		[213] menuitem '8:30 PM' selected: False
+		[214] menuitem '8:45 PM' selected: False
+		[215] menuitem '9:00 PM' selected: False
+		[216] menuitem '9:15 PM' selected: False
+		[217] menuitem '9:30 PM' selected: False
+		[218] menuitem '9:45 PM' selected: False
+		[219] menuitem '10:00 PM' selected: False
+		[220] menuitem '10:15 PM' selected: False
+		[221] menuitem '10:30 PM' selected: False
+		[222] menuitem '10:45 PM' selected: False
+		[223] menuitem '11:00 PM' selected: False
+		[224] menuitem '11:15 PM' selected: False
+		[225] menuitem '11:30 PM' selected: False
+		[226] menuitem '11:45 PM' selected: False
+	[484] StaticText 'Time'
+	[73] combobox '' hasPopup: menu expanded: False
+		[229] menuitem 'Party size' selected: True
+		[230] menuitem '1 guest' selected: False
+		[231] menuitem '2 guests' selected: False
+		[232] menuitem '3 guests' selected: False
+		[233] menuitem '4 guests' selected: False
+		[234] menuitem '5 guests' selected: False
+		[235] menuitem '6 guests' selected: False
+		[236] menuitem '7 guests' selected: False
+		[237] menuitem '8 guests' selected: False
+		[238] menuitem '9 guests' selected: False
+		[239] menuitem '10 guests' selected: False
+	[485] StaticText 'Party size'
+	[75] button 'Update search'",click [73],[combobox]  Reservation type -> SELECT: Pickup; [svg]   -> CLICK; [searchbox]  Find a location -> TYPE: Boston; [span]  Boston -> CLICK; [svg]   -> CLICK; [button]  18 -> CLICK; [combobox]  Time -> SELECT: 5:00 PM; [svg]   -> CLICK; [span]  2 guests -> CLICK,0,"[""\t\t[153] menuitem '5:30 AM' selected: False"", ""\t\t[154] menuitem '5:45 AM' selected: False"", ""\t\t[155] menuitem '6:00 AM' selected: False"", ""\t\t[156] menuitem '6:15 AM' selected: False"", ""\t\t[157] menuitem '6:30 AM' selected: False"", ""\t\t[158] menuitem '6:45 AM' selected: False"", ""\t\t[159] menuitem '7:00 AM' selected: False"", ""\t\t[160] menuitem '7:15 AM' selected: False"", ""\t\t[161] menuitem '7:30 AM' selected: False"", ""\t\t[162] menuitem '7:45 AM' selected: False"", ""\t\t[163] menuitem '8:00 AM' selected: False"", ""\t\t[164] menuitem '8:15 AM' selected: False"", ""\t\t[165] menuitem '8:30 AM' selected: False"", ""\t\t[166] menuitem '8:45 AM' selected: False"", ""\t\t[167] menuitem '9:00 AM' selected: False"", ""\t\t[168] menuitem '9:15 AM' selected: False"", ""\t\t[169] menuitem '9:30 AM' selected: False"", ""\t\t[170] menuitem '9:45 AM' selected: False"", ""\t\t[171] menuitem '10:00 AM' selected: False"", ""\t\t[172] menuitem '10:15 AM' selected: False""]
+	[73] combobox '' hasPopup: menu expanded: False","Let's think step-by-step. We have already selected the reservation type as Pickup, entered the location as Boston, selected the date as March 18, and the time as 5:00 PM. We also selected the number of guests as 2. Now, we need to check for the pickup restaurants available in Boston, NY on March 18 at 5:00 PM with just one guest.
+
+We can do this by selecting the number of guests as 1. In summary, the next action I will perform is ```click [168]``` to select 1 guest.",0
+"Check for pickup restaurant available in Boston, NY on March 18, 5pm with just one guest","[142] menuitem '2:45 AM' selected: False
+		[143] menuitem '3:00 AM' selected: False
+		[144] menuitem '3:15 AM' selected: False
+		[145] menuitem '3:30 AM' selected: False
+		[146] menuitem '3:45 AM' selected: False
+		[147] menuitem '4:00 AM' selected: False
+		[148] menuitem '4:15 AM' selected: False
+		[149] menuitem '4:30 AM' selected: False
+		[150] menuitem '4:45 AM' selected: False
+		[151] menuitem '5:00 AM' selected: False
+		[152] menuitem '5:15 AM' selected: False
+		[153] menuitem '5:30 AM' selected: False
+		[154] menuitem '5:45 AM' selected: False
+		[155] menuitem '6:00 AM' selected: False
+		[156] menuitem '6:15 AM' selected: False
+		[157] menuitem '6:30 AM' selected: False
+		[158] menuitem '6:45 AM' selected: False
+		[159] menuitem '7:00 AM' selected: False
+		[160] menuitem '7:15 AM' selected: False
+		[161] menuitem '7:30 AM' selected: False
+		[162] menuitem '7:45 AM' selected: False
+		[163] menuitem '8:00 AM' selected: False
+		[164] menuitem '8:15 AM' selected: False
+		[165] menuitem '8:30 AM' selected: False
+		[166] menuitem '8:45 AM' selected: False
+		[167] menuitem '9:00 AM' selected: False
+		[168] menuitem '9:15 AM' selected: False
+		[169] menuitem '9:30 AM' selected: False
+		[170] menuitem '9:45 AM' selected: False
+		[171] menuitem '10:00 AM' selected: False
+		[172] menuitem '10:15 AM' selected: False
+		[173] menuitem '10:30 AM' selected: False
+		[174] menuitem '10:45 AM' selected: False
+		[175] menuitem '11:00 AM' selected: False
+		[176] menuitem '11:15 AM' selected: False
+		[177] menuitem '11:30 AM' selected: False
+		[178] menuitem '11:45 AM' selected: False
+		[179] menuitem '12:00 PM' selected: False
+		[180] menuitem '12:15 PM' selected: False
+		[181] menuitem '12:30 PM' selected: False
+		[182] menuitem '12:45 PM' selected: False
+		[183] menuitem '1:00 PM' selected: False
+		[184] menuitem '1:15 PM' selected: False
+		[185] menuitem '1:30 PM' selected: False
+		[186] menuitem '1:45 PM' selected: False
+		[187] menuitem '2:00 PM' selected: False
+		[188] menuitem '2:15 PM' selected: False
+		[189] menuitem '2:30 PM' selected: False
+		[190] menuitem '2:45 PM' selected: False
+		[191] menuitem '3:00 PM' selected: False
+		[192] menuitem '3:15 PM' selected: False
+		[193] menuitem '3:30 PM' selected: False
+		[194] menuitem '3:45 PM' selected: False
+		[195] menuitem '4:00 PM' selected: False
+		[196] menuitem '4:15 PM' selected: False
+		[197] menuitem '4:30 PM' selected: False
+		[198] menuitem '4:45 PM' selected: False
+		[199] menuitem '5:00 PM' selected: False
+		[200] menuitem '5:15 PM' selected: False
+		[201] menuitem '5:30 PM' selected: False
+		[202] menuitem '5:45 PM' selected: False
+		[203] menuitem '6:00 PM' selected: False
+		[204] menuitem '6:15 PM' selected: False
+		[205] menuitem '6:30 PM' selected: False
+		[206] menuitem '6:45 PM' selected: False
+		[207] menuitem '7:00 PM' selected: False
+		[208] menuitem '7:15 PM' selected: False
+		[209] menuitem '7:30 PM' selected: False
+		[210] menuitem '7:45 PM' selected: False
+		[211] menuitem '8:00 PM' selected: False
+		[212] menuitem '8:15 PM' selected: False
+		[213] menuitem '8:30 PM' selected: False
+		[214] menuitem '8:45 PM' selected: False
+		[215] menuitem '9:00 PM' selected: False
+		[216] menuitem '9:15 PM' selected: False
+		[217] menuitem '9:30 PM' selected: False
+		[218] menuitem '9:45 PM' selected: False
+		[219] menuitem '10:00 PM' selected: False
+		[220] menuitem '10:15 PM' selected: False
+		[221] menuitem '10:30 PM' selected: False
+		[222] menuitem '10:45 PM' selected: False
+		[223] menuitem '11:00 PM' selected: False
+		[224] menuitem '11:15 PM' selected: False
+		[225] menuitem '11:30 PM' selected: False
+		[226] menuitem '11:45 PM' selected: False
+	[484] StaticText 'Time'
+	[72] combobox '' hasPopup: menu expanded: False
+		[229] menuitem 'Party size' selected: True
+		[230] menuitem '1 guest' selected: False
+		[231] menuitem '2 guests' selected: False
+		[232] menuitem '3 guests' selected: False
+		[233] menuitem '4 guests' selected: False
+		[234] menuitem '5 guests' selected: False
+		[235] menuitem '6 guests' selected: False
+		[236] menuitem '7 guests' selected: False
+		[237] menuitem '8 guests' selected: False
+		[238] menuitem '9 guests' selected: False
+		[239] menuitem '10 guests' selected: False
+	[485] StaticText 'Party size'
+	[75] button 'Update search'",click [75],[combobox]  Reservation type -> SELECT: Pickup; [svg]   -> CLICK; [searchbox]  Find a location -> TYPE: Boston; [span]  Boston -> CLICK; [svg]   -> CLICK; [button]  18 -> CLICK; [combobox]  Time -> SELECT: 5:00 PM; [svg]   -> CLICK; [span]  2 guests -> CLICK; [combobox]  Size -> SELECT: 1 guest,0,"[""\t\t[153] menuitem '5:30 AM' selected: False"", ""\t\t[154] menuitem '5:45 AM' selected: False"", ""\t\t[155] menuitem '6:00 AM' selected: False"", ""\t\t[156] menuitem '6:15 AM' selected: False"", ""\t\t[157] menuitem '6:30 AM' selected: False"", ""\t\t[158] menuitem '6:45 AM' selected: False"", ""\t\t[159] menuitem '7:00 AM' selected: False"", ""\t\t[160] menuitem '7:15 AM' selected: False"", ""\t\t[161] menuitem '7:30 AM' selected: False"", ""\t\t[162] menuitem '7:45 AM' selected: False"", ""\t\t[163] menuitem '8:00 AM' selected: False"", ""\t\t[164] menuitem '8:15 AM' selected: False"", ""\t\t[165] menuitem '8:30 AM' selected: False"", ""\t\t[166] menuitem '8:45 AM' selected: False"", ""\t\t[167] menuitem '9:00 AM' selected: False"", ""\t\t[168] menuitem '9:15 AM' selected: False"", ""\t\t[169] menuitem '9:30 AM' selected: False"", ""\t\t[170] menuitem '9:45 AM' selected: False"", ""\t\t[171] menuitem '10:00 AM' selected: False"", ""\t\t[172] menuitem '10:15 AM' selected: False""]
+	[75] button 'Update search'","Let's think step-by-step. We are on the page that shows available pickup times for a restaurant reservation in Boston, NY. We have already selected the pickup option, typed ""Boston"" in the location search box, selected the date ""18"" and time ""5:00 PM"", and selected ""1 guest"" for the reservation size. We need to check if there are any available pickup times. We can do this by clicking the ""Update search"" button. In summary, the next action I will perform is `click [75]`.",1

@@ -15,16 +15,40 @@ plan:
 import csv
 import re
 import openai  
+import pandas as pd
+from tqdm import tqdm
+import json
+import os
 
-instruction_path = "/home/zhitongg/webarena/agent/prompts/raw/p_cot_id_actree_2s_no_na.py"
+instruction_path = "/home/zhitongg/webarena/mind2web_p_cot_id_actree_2s_no_na.json"
+
+def save_last_processed_index(index):
+    with open("oracle_last_processed_index.txt", "w") as f:
+        f.write(str(index))
+
+def load_last_processed_index():
+    try:
+        with open("oracle_last_processed_index.txt", "r") as f:
+            return int(f.read().strip())
+    except FileNotFoundError:
+        return 0
 
 def testing():
-    with open('/home/zhitongg/webarena/ColBERT/preprocessed_mind2web.csv', 'r') as file, open(f"oracle_mind2web.csv", mode=mode, newline='') as file2:
-        reader = csv.DictReader(file)
+    last_processed_index = load_last_processed_index()
+    mode = 'a' if last_processed_index > 0 else 'w'
+    mind2web_data = pd.read_csv("/home/zhitongg/webarena/ColBERT/preprocessed_mind2web.csv")
+
+    with open(f"oracle_mind2web.csv", mode=mode, newline='') as file2:
+        
         writer = csv.writer(file2)
-        writer.writerow(['query', 'obs', 'action', 'prev_action', 'windowed_obs', 'contained', 'modified_obs', 'predict_action' 'success'])
+        if last_processed_index == 0:
+            writer.writerow(['query', 'obs', 'action', 'prev_action', 'windowed_obs', 'contained', 'modified_obs', 'predict_action' 'success'])
     
-        for row in reader:
+        for i, data in tqdm(enumerate(mind2web_data.iterrows()), total=mind2web_data.shape[0]):
+            index, row = data
+            if index < last_processed_index:
+                continue
+
             action_element = extract_element_number(row['action'])
             success = 0
             if action_element:
@@ -33,8 +57,10 @@ def testing():
                 next_action_num = extract_element_number(next_action_prediction)
                 if next_action_num == action_element:
                     success = 1
-            writer.writerow([row['query'], row['obs'],  row['action'],row['PREVIOUS ACTIONS'], contained, row['modified_obs'], next_action_prediction, success])
-            
+            writer.writerow([row['query'], row['obs'],  row['action'],row['PREVIOUS ACTIONS'], contained, modified_obs, next_action_prediction, success])
+            file2.flush()
+
+            save_last_processed_index(index)
                     
                 
 def predict_next_action(intent, previous_action_str, obs):
@@ -52,22 +78,22 @@ def predict_next_action(intent, previous_action_str, obs):
         )
     message: list[dict[str, str]] | str
     message = [{"role": "system", "content": intro}]
-                for (x, y) in examples:
-                    message.append(
-                        {
-                            "role": "system",
-                            "name": "example_user",
-                            "content": x,
-                        }
-                    )
-                    message.append(
-                        {
-                            "role": "system",
-                            "name": "example_assistant",
-                            "content": y,
-                        }
-                    )
-                message.append({"role": "user", "content": current})
+    for (x, y) in examples:
+        message.append(
+            {
+                "role": "system",
+                "name": "example_user",
+                "content": x,
+            }
+        )
+        message.append(
+            {
+                "role": "system",
+                "name": "example_assistant",
+                "content": y,
+            }
+        )
+    message.append({"role": "user", "content": current})
 
     openai.api_key = os.environ["OPENAI_API_KEY"]
     openai.organization = os.environ.get("OPENAI_ORGANIZATION", "")
@@ -99,8 +125,9 @@ def append_element_to_obs(obs, windowed_obs, element_number):
         if f'[{element_number}]' in element:
             true_element = element
             break
-    
-    windowed_obs.insert(true_index+1, true_element)
+    windowed_list = windowed_obs.split('\n')
+    windowed_list.insert(true_index+1, true_element)
+    windowed_obs = '\n'.join(windowed_list)
     return 0, windowed_obs
 
 
