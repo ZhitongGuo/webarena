@@ -33,37 +33,48 @@ def load_last_processed_index():
     except FileNotFoundError:
         return 0
 
+def save_error_index(index):
+    with open("oracle_error.txt", "a") as f:
+        f.write(str(index)+"\n")
+
 def testing():
     last_processed_index = load_last_processed_index()
     mode = 'a' if last_processed_index > 0 else 'w'
     mind2web_data = pd.read_csv("/home/zhitongg/webarena/ColBERT/preprocessed_mind2web.csv")
 
+    
+
     with open(f"oracle_mind2web.csv", mode=mode, newline='') as file2:
         
         writer = csv.writer(file2)
         if last_processed_index == 0:
-            writer.writerow(['query', 'obs', 'action', 'prev_action', 'windowed_obs', 'contained', 'modified_obs', 'predict_action' 'success'])
+            writer.writerow(['query', 'obs', 'action', 'prev_action', 'windowed_obs', 'contained', 'modified_obs', 'predict_action', 'success'])
     
         for i, data in tqdm(enumerate(mind2web_data.iterrows()), total=mind2web_data.shape[0]):
             index, row = data
-            if index < last_processed_index:
+            if index <= last_processed_index:
                 continue
 
             action_element = extract_element_number(row['action'])
             success = 0
             if action_element:
                 contained, modified_obs = append_element_to_obs(row['obs'], row['windowed_obs'], action_element)
-                next_action_prediction = predict_next_action(row['query'], row['PREVIOUS ACTIONS'], modified_obs)
+                try:
+                    next_action_prediction = predict_next_action(row['query'], row['PREVIOUS ACTIONS'], modified_obs)
+                except:
+                    save_error_index(index)
+                    writer.writerow([row['query'], row['obs'],  row['action'],row['PREVIOUS ACTIONS'], row['windowed_obs'],contained, modified_obs, -1, -1])
+                    continue
                 next_action_num = extract_element_number(next_action_prediction)
                 if next_action_num == action_element:
                     success = 1
-            writer.writerow([row['query'], row['obs'],  row['action'],row['PREVIOUS ACTIONS'], contained, modified_obs, next_action_prediction, success])
+            writer.writerow([row['query'], row['obs'],  row['action'],row['PREVIOUS ACTIONS'], row['windowed_obs'],contained, modified_obs, next_action_prediction, success])
             file2.flush()
 
             save_last_processed_index(index)
                     
                 
-def predict_next_action(intent, previous_action_str, obs):
+def predict_next_action(intent, previous_action_str, obs, mode = 'chat'):
     instruction = json.load(open(instruction_path))
     instruction["examples"] = [tuple(e) for e in instruction["examples"]]
     intro = instruction["intro"]
@@ -76,36 +87,55 @@ def predict_next_action(intent, previous_action_str, obs):
             observation=obs,
             previous_action=previous_action_str,
         )
-    message: list[dict[str, str]] | str
-    message = [{"role": "system", "content": intro}]
-    for (x, y) in examples:
-        message.append(
-            {
-                "role": "system",
-                "name": "example_user",
-                "content": x,
-            }
-        )
-        message.append(
-            {
-                "role": "system",
-                "name": "example_assistant",
-                "content": y,
-            }
-        )
-    message.append({"role": "user", "content": current})
-
     openai.api_key = os.environ["OPENAI_API_KEY"]
     openai.organization = os.environ.get("OPENAI_ORGANIZATION", "")
 
-    response = openai.ChatCompletion.create(  # type: ignore
-        model="gpt-3.5-turbo-0613",
-        messages=message,
-        temperature=1.0,
-        max_tokens=384,
-        top_p=0.9,
-        stop=None,
-    )
+    if mode == "chat":
+        message = [{"role": "system", "content": intro}]
+        for (x, y) in examples:
+            message.append(
+                {
+                    "role": "system",
+                    "name": "example_user",
+                    "content": x,
+                }
+            )
+            message.append(
+                {
+                    "role": "system",
+                    "name": "example_assistant",
+                    "content": y,
+                }
+            )
+        message.append({"role": "user", "content": current})
+
+        response = openai.ChatCompletion.create(  # type: ignore
+            model="gpt-3.5-turbo-0613",
+            messages=message,
+            temperature=1.0,
+            max_tokens=384,
+            top_p=0.9,
+            stop=None,
+        )
+    elif mode == "completion":
+        message = f"{intro}\n\n"
+        message += "Here are a few examples:\n"
+        for example in examples:
+            message += f"Observation\n:{example[0]}\n\n"
+            message += f"Action: {example[1]}\n\n"
+        message += "Now make prediction given the observation\n\n"
+        message += f"Observation\n:{current}\n\n"
+        message += "Action:"
+
+        response = openai.Completion.create(  # type: ignore
+            model="gpt-3.5-turbo",
+            prompt=message,
+            temperature=1.0,
+            max_tokens=384,
+            top_p=0.9,
+            stop=None,
+        )
+
     return response.choices[0].message.content
 
 def extract_element_number(action_str):
