@@ -59,7 +59,14 @@ def load_actions(playwright: Playwright, page, actions_file, trace_file_dir, htm
         save_html(page, htmlpath)
         for ind, action in enumerate(actions[1:]):
             page.get_by_text(f"{action[0]}{action[1]}").click()
+            #page.get_by_text(re.compile("^hello$", re.IGNORECASE))
             htmlpath = os.path.join(html_dir, f"{trace_file_dir}_{ind}.html")
+
+            '''
+            use regular expression
+            for li in page.get_by_role('listitem').all():
+                li.click();
+            '''
             save_html(page, htmlpath)
     
 

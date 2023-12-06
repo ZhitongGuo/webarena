@@ -34,6 +34,7 @@ from browser_env.helper_functions import (
     get_action_description,
 )
 from evaluation_harness import evaluator_router
+from deberta_inference.deberta_inference import constuct_obs
 
 LOG_FOLDER = "log_files"
 Path(LOG_FOLDER).mkdir(parents=True, exist_ok=True)
@@ -214,6 +215,8 @@ def early_stop(
     return False, ""
 
 
+
+
 def test(
     args: argparse.Namespace,
     agent: Agent | PromptAgent | TeacherForcingAgent,
@@ -280,7 +283,12 @@ def test(
             agent.reset(config_file)
             trajectory: Trajectory = []
             obs, info = env.reset(options={"config_file": config_file})
-            state_info: StateInfo = {"observation": obs, "info": info}
+            temp = obs['text']
+
+            obs['text'] = constuct_obs(obs['text'], intent)
+            print(obs['text'])
+
+            state_info: StateInfo = {"observation": obs, "info": info} 
             trajectory.append(state_info)
 
             meta_data = {"action_history": ["None"]}
@@ -319,6 +327,8 @@ def test(
                     break
 
                 obs, _, terminated, _, info = env.step(action)
+                obs['text'] = constuct_obs(obs['text'], intent)
+                print(obs['text'])
                 state_info = {"observation": obs, "info": info}
                 trajectory.append(state_info)
 

@@ -177,11 +177,5 @@ if __name__=='__main__':
             save_last_processed_index(index)
 
 
-    # see if ACTION is in the windowed_obs, and get the final accuracy
-
-    # previous_act = None
-    # current = prompt["template"].format(observation = windowed_obs, url = "http://openstreetmap.org", objective = query, previous_action = previous_act)
-    # print(get_gpt3_5_response(prompt, current, API_KEY))
-    
     
    
