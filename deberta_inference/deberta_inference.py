@@ -1,7 +1,7 @@
 import requests
 import json
 
-API_URL = "http://localhost:8001/filter"
+API_URL = "http://localhost:8003/filter" #http://127.0.0.1:47832/filter
 
 def call_filter_api(url, html_page, objective):
     data = {
@@ -20,7 +20,6 @@ def constuct_obs(obs, intent):
         results = call_filter_api(API_URL, obs, intent)
         results_list = results['results']
 
-        
     except Exception as e:
         print(f"API call failed: {e}")
         return None
@@ -41,14 +40,12 @@ def constuct_obs(obs, intent):
     return "\n".join(final_list)
 
 if __name__ == "__main__":
-    api_url = "http://localhost:8001/filter"
-    
-    example_html = open('/data/webarena_acc_tree/render_41_tree_0.txt', 'r').read()
+    example_html = open('/Users/guozhitong/webarena/scripts/collect_obs.py', 'r').read()
     example_objective = "Extract text"
 
     try:
         print("Calling API")
-        results = call_filter_api(api_url, example_html, example_objective)
+        results = call_filter_api(API_URL, example_html, example_objective)
         print("API call successful. Results:")
         print(json.dumps(results, indent=2))
     except Exception as e:
